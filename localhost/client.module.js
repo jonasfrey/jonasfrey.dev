@@ -290,7 +290,7 @@ let o_state = f_o_proxified_and_add_listeners(
                 'Open-Source',
                 'Als Informatiker und Applikationsentwickler bin ich grosser Fan von Open source. Vieles von meinem source code (über 140 repositories) hoste ich deshalb für alle zugänglich auf github',
                 'https://github.com/jonasfrey',
-                './github.png'
+                './github.jpg'
             ),
             f_o_project(
                 'GPU Programming (Shadertoy)',
@@ -346,7 +346,11 @@ let o = await f_o_html_from_o_js(
                                             innerText: "Hallo 👋", 
                                         },
                                         {
-                                            innerText: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`
+                                            innerText: `Ich bin Jonas Frey
+Informatiker mit Leidenschaft für stabilen sauberen Code, effiziente Systeme und innovative Lösungen.
+Seit über 6 Jahren arbeite ich in den Bereichen Softwareentwicklung und Systemarchitektur. 
+Mein Fokus liegt auf der Entwicklung kleiner Anwendungen, der Automatisierung komplexer Prozesse und dem Einsatz moderner Technologien wie z. B. Python, Javascript (Denojs), Docker.
+Wenn Sie jemanden suchen, der Technik verständlich macht und Projekte mit Weitblick umsetzt, sind Sie hier genau richtig.`
                                         },
                                     ]
                                 }
