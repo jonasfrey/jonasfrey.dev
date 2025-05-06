@@ -39,14 +39,19 @@ f_add_css(
         max-width: 100vw;
         style: "display: flex;
         flex-direction: row;
+        padding: 1rem;
 
         background-size:cover;
+    }
+    h2{
+        margin-bottom: 2rem !important;
+        margin-top: 2rem !important;
     }
     .a_o_cv_section{
         position:relative;
     }
     .o_cv_section {
-        margin: 3rem 0;
+        margin-bottom: 3rem;
         position:relative;
         display: flex;
         flex-direction: row;
