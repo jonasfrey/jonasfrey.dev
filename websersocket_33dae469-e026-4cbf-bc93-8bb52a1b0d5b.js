@@ -129,10 +129,11 @@ let o_info_certificates = {
 if(!b_development){
     s_name_host = '0.0.0.0'
 }
+s_name_host = '0.0.0.0'
 await f_websersocket_serve(
     [
         {
-            n_port: 8081,
+            n_port: 8082,
             b_https: false,
             s_hostname: s_name_host,
             f_v_before_return_response: f_handler
@@ -140,7 +141,7 @@ await f_websersocket_serve(
         ...[
             (!b_deno_deploy) ? {
                 // ...o_info_certificates,
-                n_port: 8443,
+                n_port: 8444,
                 b_https: true,
                 s_hostname: s_name_host,
                 f_v_before_return_response: f_handler
