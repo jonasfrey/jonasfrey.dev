@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Lebenslauf - Jonas Frey</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+    body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        color: #1a1a2e;
+        background: #fff;
+        font-size: 9pt;
+        line-height: 1.4;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .page {
+        width: 210mm;
+        min-height: 297mm;
+        display: flex;
+        flex-direction: row;
+    }
+
+    /* --- Left Sidebar --- */
+    .sidebar {
+        width: 72mm;
+        background: #1a1a2e;
+        color: #e4e4ef;
+        padding: 20mm 6mm 15mm 6mm;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .photo {
+        width: 42mm;
+        height: 42mm;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #6c63ff;
+        display: block;
+        margin: 0 auto 8px;
+    }
+
+    .sidebar h1 {
+        font-size: 15pt;
+        font-weight: 700;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 2px;
+    }
+
+    .sidebar .role {
+        text-align: center;
+        color: #6c63ff;
+        font-weight: 500;
+        font-size: 9pt;
+        margin-bottom: 12px;
+    }
+
+    .sidebar h3 {
+        font-size: 8.5pt;
+        font-weight: 600;
+        color: #6c63ff;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        margin-bottom: 6px;
+        padding-bottom: 4px;
+        border-bottom: 1px solid #2a2a3a;
+    }
+
+    .sidebar .info-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 6px;
+        margin-bottom: 5px;
+        font-size: 8.5pt;
+        color: #c0c0d0;
+        word-break: break-all;
+    }
+
+    .sidebar .info-icon {
+        flex-shrink: 0;
+        width: 14px;
+        text-align: center;
+        color: #6c63ff;
+        font-size: 9pt;
+    }
+
+    .sidebar .skills-list {
+        list-style: none;
+    }
+
+    .sidebar .skills-list li {
+        font-size: 8.5pt;
+        color: #c0c0d0;
+        margin-bottom: 4px;
+        padding-left: 10px;
+        position: relative;
+    }
+
+    .sidebar .skills-list li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 6px;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: #6c63ff;
+    }
+
+    .sidebar .lang-item {
+        display: flex;
+        justify-content: space-between;
+        font-size: 8.5pt;
+        color: #c0c0d0;
+        margin-bottom: 3px;
+    }
+
+    /* --- Main Content --- */
+    .main {
+        flex: 1;
+        padding: 20mm 10mm 15mm 10mm;
+    }
+
+    .main h2 {
+        font-size: 11pt;
+        font-weight: 600;
+        color: #1a1a2e;
+        margin-bottom: 8px;
+        padding-bottom: 3px;
+        border-bottom: 2px solid #6c63ff;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .main h2 .icon {
+        color: #6c63ff;
+        font-size: 13pt;
+    }
+
+    .section {
+        margin-bottom: 12px;
+    }
+
+    /* --- Experience Table --- */
+    .exp-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 8.5pt;
+        margin-bottom: 6px;
+    }
+
+    .exp-table th {
+        background: #f0f0f8;
+        color: #1a1a2e;
+        font-weight: 600;
+        text-align: left;
+        padding: 5px 6px;
+        border-bottom: 2px solid #6c63ff;
+        font-size: 7.5pt;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .exp-table td {
+        padding: 6px 6px;
+        border-bottom: 1px solid #e8e8f0;
+        vertical-align: top;
+    }
+
+    .exp-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .exp-table .date {
+        white-space: nowrap;
+        color: #6c63ff;
+        font-weight: 500;
+        width: 60px;
+    }
+
+    .exp-table .type-tag {
+        display: inline-block;
+        background: #eeeeff;
+        color: #6c63ff;
+        font-size: 7pt;
+        font-weight: 600;
+        padding: 1px 5px;
+        border-radius: 3px;
+    }
+
+    .exp-table .pct {
+        text-align: center;
+        font-weight: 500;
+    }
+
+    /* --- Timeline entries --- */
+    .timeline {
+        position: relative;
+        padding-left: 16px;
+    }
+
+    .timeline::before {
+        content: '';
+        position: absolute;
+        left: 3px;
+        top: 4px;
+        bottom: 4px;
+        width: 2px;
+        background: #ddd;
+    }
+
+    .timeline-item {
+        position: relative;
+        margin-bottom: 6px;
+        padding-left: 12px;
+    }
+
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -14px;
+        top: 5px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #6c63ff;
+        border: 2px solid #fff;
+    }
+
+    .timeline-item .tl-date {
+        font-size: 7.5pt;
+        color: #6c63ff;
+        font-weight: 600;
+    }
+
+    .timeline-item .tl-title {
+        font-weight: 600;
+        font-size: 9pt;
+        color: #1a1a2e;
+    }
+
+    .timeline-item .tl-desc {
+        font-size: 8pt;
+        color: #666;
+        margin-top: 1px;
+    }
+
+    /* --- Projects --- */
+    .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .project-card {
+        background: #f8f8fc;
+        border: 1px solid #e8e8f0;
+        border-radius: 6px;
+        padding: 8px 10px;
+    }
+
+    .project-card .proj-name {
+        font-weight: 600;
+        font-size: 8.5pt;
+        color: #6c63ff;
+        margin-bottom: 2px;
+    }
+
+    .project-card .proj-desc {
+        font-size: 7.5pt;
+        color: #666;
+        line-height: 1.4;
+    }
+
+    .project-card .proj-url {
+        font-size: 7pt;
+        color: #999;
+        margin-top: 2px;
+    }
+
+    .weiterbildung-note {
+        background: #eeeeff;
+        border-left: 3px solid #6c63ff;
+        padding: 6px 10px;
+        font-size: 8.5pt;
+        color: #333;
+        margin-top: 8px;
+        border-radius: 0 4px 4px 0;
+    }
+</style>
+</head>
+<body>
+
+<div class="page">
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <img class="photo" src="./localhost/jonas.jpg" alt="Jonas Frey">
+        <h1>Jonas Frey</h1>
+        <div class="role">Software Engineer &amp; System Architect</div>
+
+        <div>
+            <h3>Kontakt</h3>
+            <div class="info-item">
+                <span class="info-icon">@</span>
+                <span>github.com/jonasfrey</span>
+            </div>
+            <div class="info-item">
+                <span class="info-icon">W</span>
+                <span>jonasfrey.ch</span>
+            </div>
+        </div>
+
+        <div>
+            <h3>Technologien</h3>
+            <ul class="skills-list">
+                <li>JavaScript / TypeScript</li>
+                <li>Deno / Node.js</li>
+                <li>Python</li>
+                <li>Docker</li>
+                <li>Linux / Bash</li>
+                <li>GPU Programming (GLSL)</li>
+                <li>Git / CI/CD</li>
+                <li>WebSockets / REST APIs</li>
+                <li>3D Modeling / Three.js</li>
+                <li>Raspberry Pi / IoT</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Sprachen</h3>
+            <div class="lang-item"><span>Deutsch</span><span>Muttersprache</span></div>
+            <div class="lang-item"><span>Englisch</span><span>Fliessend</span></div>
+        </div>
+
+        <div>
+            <h3>Interessen</h3>
+            <ul class="skills-list">
+                <li>Open Source (140+ Repos)</li>
+                <li>Fotografie (Unsplash)</li>
+                <li>GPU / Shader Art</li>
+                <li>3D Printing</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+        <!-- Profil -->
+        <div class="section">
+            <h2><span class="icon">&#9632;</span> Profil</h2>
+            <p>Informatiker EFZ mit Leidenschaft für stabilen, sauberen Code, effiziente Systeme und innovative Lösungen. Seit über 6 Jahren in der Softwareentwicklung und Systemarchitektur tätig. Fokus auf Anwendungsentwicklung, Prozessautomatisierung und moderne Technologien.</p>
+        </div>
+
+        <!-- Berufserfahrung -->
+        <div class="section">
+            <h2><span class="icon">&#9632;</span> Berufserfahrung</h2>
+            <table class="exp-table">
+                <thead>
+                    <tr>
+                        <th>Von</th>
+                        <th>Bis</th>
+                        <th>Firma</th>
+                        <th>Typ</th>
+                        <th>Funktion</th>
+                        <th>%</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="date">08.2014</td>
+                        <td class="date">08.2016</td>
+                        <td>Computerschule Bern</td>
+                        <td><span class="type-tag">Ausbildung</span></td>
+                        <td>Informatiker EFZ</td>
+                        <td class="pct">100%</td>
+                    </tr>
+                    <tr>
+                        <td class="date">08.2016</td>
+                        <td class="date">08.2018</td>
+                        <td>Konvert AG</td>
+                        <td><span class="type-tag">Praxis</span></td>
+                        <td>Informatiker EFZ</td>
+                        <td class="pct">100%</td>
+                    </tr>
+                    <tr>
+                        <td class="date">11.2019</td>
+                        <td class="date">10.2026</td>
+                        <td>Universität Bern</td>
+                        <td><span class="type-tag">Praxis</span></td>
+                        <td>Informatiker EFZ</td>
+                        <td class="pct">80%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Ausbildung -->
+        <div class="section">
+            <h2><span class="icon">&#9632;</span> Ausbildung</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="tl-date">2004 - 2010</div>
+                    <div class="tl-title">Primarschule Wohlen b. Bern</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="tl-date">2010 - 2013</div>
+                    <div class="tl-title">Sekundarstufe Oberstufenschule Hinterkappelen</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="tl-date">2013 - 2014</div>
+                    <div class="tl-title">Computerschule Bern (Basisschuljahr)</div>
+                    <div class="tl-desc">Vertiefung Informatikkenntnisse</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="tl-date">2014 - 2016</div>
+                    <div class="tl-title">Computerschule Bern (Informatiker / EFZ)</div>
+                    <div class="tl-desc">Eidgenössisches Fähigkeitszeugnis Informatiker</div>
+                </div>
+            </div>
+
+            <div class="weiterbildung-note">
+                <strong>Weiterbildung:</strong> GIBB HF Informatik - Abschluss voraussichtlich 2026
+            </div>
+        </div>
+
+        <!-- Projekte -->
+        <div class="section">
+            <h2><span class="icon">&#9632;</span> Projekte &amp; Open Source</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="proj-name">Stellarium Gornergrat</div>
+                    <div class="proj-desc">Web-Plattform für ferngesteuertes Observatorium. Full-Stack Entwicklung.</div>
+                    <div class="proj-url">stellarium-gornergrat.ch</div>
+                </div>
+                <div class="project-card">
+                    <div class="proj-name">gpu-monitor-browser-gui</div>
+                    <div class="proj-desc">Browser GUI für nvidia-smi. Echtzeit GPU-Monitoring. 20+ Stars auf GitHub.</div>
+                    <div class="proj-url">github.com/jonasfrey</div>
+                </div>
+                <div class="project-card">
+                    <div class="proj-name">topotransformer</div>
+                    <div class="proj-desc">3D-Modelle aus 2D-Topographie&shy;bildern generieren.</div>
+                </div>
+                <div class="project-card">
+                    <div class="proj-name">video_wizard</div>
+                    <div class="proj-desc">KI-gestützter Video-Cutter mit intelligenter Szenenerkennung.</div>
+                </div>
+                <div class="project-card">
+                    <div class="proj-name">dualsense_chrome</div>
+                    <div class="proj-desc">Chrome HID API Integration für PlayStation DualSense Controller.</div>
+                </div>
+                <div class="project-card">
+                    <div class="proj-name">polyprints</div>
+                    <div class="proj-desc">Low-Polygon 3D-druckbare Modelle generieren und exportieren.</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
