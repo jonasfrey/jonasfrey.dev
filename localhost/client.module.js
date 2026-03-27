@@ -568,7 +568,7 @@ let o = await f_o_html_from_o_js(
                                         },
                                         {
                                             class: 'bio',
-                                            innerText: "Informatiker mit Leidenschaft. Ich strebe nach stabilen, sauberen Code, effizienten Systemen und innovativen Lösungen. Seit über 6 Jahren arbeite ich in den Bereichen Softwareentwicklung und Systemarchitektur. Mein Fokus liegt auf der Entwicklung von Anwendungen, der Automatisierung von Prozessen und dem Einsatz moderner Technologien wie Python, JavaScript (Deno), und Docker."
+                                            innerText: "Informatiker mit Leidenschaft. Ich strebe nach stabilen, sauberen Code, effizienten Systemen und innovativen Lösungen. Seit über 6 Jahren arbeite ich in den Bereichen Softwareentwicklung und Systemarchitektur. Mein Fokus liegt auf der Entwicklung von Anwendungen, der Automatisierung von Prozessen und dem Einsatz moderner Technologien wie JavaScript (Isomorphic), Python, Rust, Docker und SQL."
                                         },
                                     ]
                                 }
