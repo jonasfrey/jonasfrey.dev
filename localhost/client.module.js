@@ -512,14 +512,8 @@ let o_state = f_o_proxified_and_add_listeners(
                 './stellarium.jpg'
             ),
             f_o_project(
-                'Open-Source',
-                '140+ Repositories auf GitHub. Code für alle zugänglich.',
-                'https://github.com/jonasfrey',
-                './github.jpg'
-            ),
-            f_o_project(
                 'GPU Programming',
-                'Shader-Entwicklung und GPU-basierte Visualisierungen.',
+                'Shader-Entwicklung und GPU-basierte Visualisierungen auf Shadertoy.',
                 'https://www.shadertoy.com/user/jonasfrey',
                 './shadertoy.jpeg'
             ),
@@ -528,7 +522,19 @@ let o_state = f_o_proxified_and_add_listeners(
                 'Naturfotografie veröffentlicht auf Unsplash.',
                 'https://unsplash.com/@jonasfrey',
                 './jonas-frey-SvceOClvhsA-unsplash.jpg'
-            )
+            ),
+            f_o_project(
+                'TopoPrints',
+                '3D-druckbare Topographie-Modelle der ganzen Welt. Webapplikation zur Modell-Generierung.',
+                'https://makerworld.com/en/@TopoPrints',
+                './project_topotransformer.jpg'
+            ),
+            f_o_project(
+                'VeryOS',
+                '3D-Druck Projekte kombiniert mit OpenSCAD, Mikroelektronik und IoT.',
+                'https://makerworld.com/de/@veryOS/upload',
+                './project_polyprints.jpg'
+            ),
         ],
         ...o_state_a_o_toast,
     },
@@ -674,18 +680,18 @@ let o = await f_o_html_from_o_js(
                     class: 'a_o_github',
                     f_a_o: ()=>{
                         let a_o_repo = [
-                            { s_name: 'gpu-monitor-browser-gui', s_desc: 'A browser GUI for nvidia-smi. Monitor your GPUs in real-time from any browser.', s_lang: 'JavaScript', s_stars: '20', s_color: '#f1e05a' },
-                            { s_name: 'dualsense_chrome', s_desc: 'Chrome HID API integration for the PlayStation DualSense controller.', s_lang: 'JavaScript', s_stars: '2', s_color: '#f1e05a' },
-                            { s_name: 'topotransformer', s_desc: '3D models from topography 2D images. Convert maps into printable terrain.', s_lang: 'JavaScript', s_stars: '0', s_color: '#f1e05a' },
-                            { s_name: 'polyprints', s_desc: 'Low polygon 3D printable models. Generate and export geometric art.', s_lang: 'JavaScript', s_stars: '0', s_color: '#f1e05a' },
-                            { s_name: 'video_wizard', s_desc: 'AI-powered video cutter. Intelligent scene detection and editing.', s_lang: 'JavaScript', s_stars: '0', s_color: '#f1e05a' },
-                            { s_name: 'raspi', s_desc: 'Control Raspberry Pi GPIO pins via JavaScript. IoT made simple.', s_lang: 'JavaScript', s_stars: '1', s_color: '#f1e05a' },
+                            { s_name: 'browser_crud_app_template', s_desc: 'Lightweight isomorphic native JavaScript framework for full desktop applications. Basis for most other projects.', s_lang: 'JavaScript', s_stars: '0', s_color: '#f1e05a', s_account: 'jonasfrey' },
+                            { s_name: 'video_wizard', s_desc: 'AI-powered video editor. Video to audio to text to video. Intelligent scene detection based on utterances and audio events.', s_lang: 'JavaScript', s_stars: '0', s_color: '#f1e05a', s_account: 'jonasfrey' },
+                            { s_name: 'topotransformer', s_desc: '3D-printable models from 2D topography images. Web app to generate terrain of any place on earth.', s_lang: 'JavaScript', s_stars: '0', s_color: '#f1e05a', s_account: 'jonasfrey' },
+                            { s_name: 'nvidia_smi_gui', s_desc: 'Simple desktop app to monitor NVIDIA GPU performance in real-time.', s_lang: 'JavaScript', s_stars: '0', s_color: '#f1e05a', s_account: 'veryos-git' },
+                            { s_name: 'tea_dunker', s_desc: '3D-printed parts + ESP32 + stepper motor for an automatic tea dunking machine.', s_lang: 'JavaScript', s_stars: '0', s_color: '#f1e05a', s_account: 'veryos-git' },
+                            { s_name: 'microscope_motorization', s_desc: 'Software for 3D-printed hardware that automates an optical microscope slide.', s_lang: 'JavaScript', s_stars: '0', s_color: '#f1e05a', s_account: 'veryos-git' },
                         ];
                         return a_o_repo.map(o_repo=>{
                             return {
                                 class: 'o_github_repo',
                                 s_tag: 'a',
-                                href: `https://github.com/jonasfrey/${o_repo.s_name}`,
+                                href: `https://github.com/${o_repo.s_account}/${o_repo.s_name}`,
                                 target: '_blank',
                                 f_a_o: ()=>{
                                     return [
