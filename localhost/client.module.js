@@ -527,13 +527,13 @@ let o_state = f_o_proxified_and_add_listeners(
                 'TopoPrints',
                 '3D-druckbare Topographie-Modelle der ganzen Welt. Webapplikation zur Modell-Generierung.',
                 'https://makerworld.com/en/@TopoPrints',
-                './project_topotransformer.jpg'
+                './topoprints.jpg'
             ),
             f_o_project(
                 'VeryOS',
                 '3D-Druck Projekte kombiniert mit OpenSCAD, Mikroelektronik und IoT.',
                 'https://makerworld.com/de/@veryOS/upload',
-                './project_polyprints.jpg'
+                './veryos.png'
             ),
         ],
         ...o_state_a_o_toast,
