@@ -150,6 +150,10 @@ f_add_css(
         border-color: var(--color-accent);
         background: rgba(108,99,255,0.3) !important;
     }
+    .hero-links .email-link:hover {
+        border-color: var(--color-accent);
+        background: rgba(108,99,255,0.3) !important;
+    }
 
     /* --- Right Content Area --- */
     .content {
@@ -589,6 +593,18 @@ let o = await f_o_html_from_o_js(
                                             target: '_blank',
                                             innerText: 'GitHub',
                                         },
+                                        {
+                                            class: 'email-link',
+                                            style: 'display:flex;align-items:center;color:rgba(255,255,255,0.9);padding:0.5rem 1rem;background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.15);border-radius:var(--radius);transition:border-color var(--transition),background var(--transition);cursor:default;',
+                                            f_a_o: ()=>{
+                                                return [{
+                                                    s_tag: 'img',
+                                                    src: './email.svg',
+                                                    alt: 'Email',
+                                                    style: 'height:1em;filter:brightness(0) invert(1);opacity:0.9;',
+                                                }]
+                                            }
+                                        },
                                     ]
                                 }
                             }
@@ -745,6 +761,17 @@ let o = await f_o_html_from_o_js(
                                 href: 'https://github.com/jonasfrey',
                                 target: '_blank',
                                 innerText: 'github.com/jonasfrey',
+                            },
+                            {
+                                style: 'margin-top: 0.5rem;display:flex;align-items:center;gap:0.5rem;',
+                                f_a_o: ()=>{
+                                    return [{
+                                        s_tag: 'img',
+                                        src: './email.svg',
+                                        alt: 'Email',
+                                        style: 'height:1em;filter:brightness(0) invert(1);opacity:0.85;',
+                                    }]
+                                }
                             },
                             {
                                 style: 'margin-top: 0.5rem',
