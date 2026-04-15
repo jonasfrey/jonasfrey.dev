@@ -478,16 +478,6 @@ let o_state = f_o_proxified_and_add_listeners(
     {
         a_o_cv_section: [
             f_o_cv_section(
-                'Primarschule Wohlen b. Bern',
-                'Als kind wuchs ich in Wohlen bei bern auf.',
-                2004, 2010
-            ),
-            f_o_cv_section(
-                'Sekundarstufe Oberstufenschule Hinterkappelen',
-                'Die oberstufenschule habe ich in hinterkappelen absolviert.',
-                2010, 2013
-            ),
-            f_o_cv_section(
                 'Computerschule Bern (Basisschuljahr)',
                 'Informatikkenntnisse gestärkt und Lehrstelle gefunden.',
                 2013, 2014
