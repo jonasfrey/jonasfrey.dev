@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Bewerbung - Full Stack Software Developer - Jonas Frey</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @page { size: A4; margin: 0; }
+
+    body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        color: #1a1a2e;
+        background: #fff;
+        font-size: 10pt;
+        line-height: 1.45;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .page {
+        width: 210mm;
+        padding: 12mm 24mm 10mm 24mm;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* --- Header --- */
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        border-bottom: 2px solid #6c63ff;
+        padding-bottom: 10px;
+        margin-bottom: 16px;
+    }
+
+    .header .name {
+        font-size: 20pt;
+        font-weight: 700;
+        color: #1a1a2e;
+        line-height: 1.1;
+    }
+
+    .header .role {
+        color: #6c63ff;
+        font-weight: 500;
+        font-size: 10pt;
+        margin-top: 2px;
+    }
+
+    .header .contact {
+        text-align: right;
+        font-size: 8.5pt;
+        color: #666;
+        line-height: 1.6;
+    }
+
+    .header .contact span { color: #6c63ff; font-weight: 500; }
+
+    /* --- Address block --- */
+    .addr-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 18px;
+    }
+
+    .recipient { font-size: 10pt; line-height: 1.5; }
+    .recipient .strong { font-weight: 600; }
+    .place-date { font-size: 10pt; color: #444; white-space: nowrap; }
+
+    /* --- Subject --- */
+    .subject {
+        font-weight: 600;
+        font-size: 11pt;
+        color: #1a1a2e;
+        margin-bottom: 14px;
+    }
+
+    p { margin-bottom: 9px; }
+
+    .highlight { color: #6c63ff; font-weight: 600; }
+
+    ul.match {
+        list-style: none;
+        margin: 2px 0 10px 0;
+    }
+
+    ul.match li {
+        position: relative;
+        padding-left: 18px;
+        margin-bottom: 4px;
+        font-size: 10pt;
+    }
+
+    ul.match li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 7px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #6c63ff;
+    }
+
+    ul.match li strong { color: #1a1a2e; font-weight: 600; }
+
+    .signature { margin-top: 12px; }
+    .signature .sig-name { font-weight: 600; margin-top: 4px; }
+
+    .enclosure {
+        margin-top: 10px;
+        font-size: 8.5pt;
+        color: #888;
+        border-top: 1px solid #e8e8f0;
+        padding-top: 6px;
+    }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div>
+            <div class="name">Jonas Frey</div>
+            <div class="role">Software Engineer &amp; System Architect</div>
+        </div>
+        <div class="contact">
+            <div><span>W</span>&nbsp; jonasfrey.dev</div>
+            <div><span>@</span>&nbsp; github.com/jonasfrey</div>
+            <div><span>&#9993;</span>&nbsp; jonas.immanuel.frey@gmail.com</div>
+        </div>
+    </div>
+
+    <!-- ADDRESS + DATE -->
+    <div class="addr-row">
+        <div class="recipient">
+            <div class="strong">w hoch 2 GmbH</div>
+            <div>Effingerstrasse 15</div>
+            <div>3008 Bern</div>
+        </div>
+        <div class="place-date">Bern, 17. August 2026</div>
+    </div>
+
+    <!-- SUBJECT -->
+    <div class="subject">Bewerbung als Full Stack Software Developer (70&ndash;80&nbsp;%)</div>
+
+    <!-- BODY -->
+    <p>Sehr geehrte Damen und Herren</p>
+
+    <p>Softwarelösungen, die einen echten Mehrwert schaffen &ndash; und zwar sauber, skalierbar und
+    wartbar gebaut &ndash; sind genau das, was mich seit über sechs Jahren antreibt. Dass w&nbsp;hoch&nbsp;2
+    Beratung, Forschung, statistische Analyse und Softwareentwicklung verbindet und damit zur
+    digitalen Transformation im Schweizer Gesundheitswesen beiträgt, spricht mich fachlich wie
+    persönlich an. Deshalb bewerbe ich mich mit grosser Freude als Full Stack Software Developer
+    in Ihrem Team in Bern.</p>
+
+    <p>Aktuell arbeite ich zu 80&nbsp;% als Informatiker an der <span class="highlight">Universität Bern</span>,
+    wo ich seit 2019 in einem forschungsnahen Umfeld tätig bin. Federführend entwickle und betreibe
+    ich dort die Web-Plattform des ferngesteuerten Observatoriums <span class="highlight">Stellarium
+    Gornergrat</span> &ndash; von der Datenbank über die REST- und WebSocket-Schnittstellen bis zur
+    Benutzeroberfläche. Ich kenne den gesamten Stack aus der täglichen Praxis und weiss, wie man
+    Anwendungen baut, die über Jahre zuverlässig laufen und wartbar bleiben.</p>
+
+    <p>Warum ich gut zu Ihrer Ausschreibung passe:</p>
+    <ul class="match">
+        <li><strong>Full Stack, über 6 Jahre:</strong> Konzeption, Entwicklung und Wartung moderner
+        Webanwendungen über den gesamten Stack &ndash; von PostgreSQL/SQL bis zur UI.</li>
+        <li><strong>Python &amp; Backend-Services:</strong> Solide Python-Kenntnisse; für mein eigenes
+        isomorphes Framework <em>browser_crud_app_template</em> habe ich Datenmodell, API und
+        Frontend-Architektur selbst entworfen &ndash; die Konzepte hinter Django sind mir vertraut.</li>
+        <li><strong>Docker &amp; DevOps:</strong> Praktische Erfahrung mit containerisierten
+        Anwendungen, Git, CI/CD, Deployment und Monitoring (u.&nbsp;a. eigenes GPU-Monitoring-Tool
+        <em>nvidia_smi_gui</em>).</li>
+        <li><strong>Prompt Engineering &amp; KI:</strong> In Projekten wie <em>video_wizard</em>
+        (KI-gestützter Video-Editor: Video &rarr; Audio &rarr; Text &rarr; Schnitt) integriere ich
+        LLM- und Inferenz-Tools produktiv &ndash; Prompt-Engineering gehört zu meinem Alltag.</li>
+        <li><strong>Moderne Frontends:</strong> Fundierte JavaScript-Erfahrung; komponentenbasierte
+        Frameworks wie Vue.js eigne ich mir schnell und gerne an.</li>
+        <li><strong>Standort &amp; Sprachen:</strong> In Bern verwurzelt (Informatiker EFZ, aktuell
+        HF Informatik an der GIBB), Deutsch als Muttersprache, fliessendes Englisch.</li>
+    </ul>
+
+    <p>Ich behalte gerne das grosse Ganze im Blick, ohne die Details aus den Augen zu verlieren,
+    löse komplexe Probleme mit Ausdauer und bringe mich aktiv in technische Diskussionen ein.
+    Neben meiner Arbeit pflege ich über 140 Open-Source-Repositories &ndash; das Bauen sauberer,
+    skalierbarer Software ist für mich nicht nur Beruf, sondern Leidenschaft.</p>
+
+    <p>Ein Pensum von 70&ndash;80&nbsp;% passt ausgezeichnet zu meiner aktuellen Situation. Über die
+    Gelegenheit, Sie in einem persönlichen Gespräch kennenzulernen und gemeinsam wirkungsvolle
+    digitale Lösungen zu gestalten, freue ich mich sehr.</p>
+
+    <div class="signature">
+        <div>Freundliche Grüsse</div>
+        <div class="sig-name">Jonas Frey</div>
+    </div>
+
+    <div class="enclosure">
+        Beilagen: Lebenslauf, Arbeitszeugnisse &middot; Portfolio: jonasfrey.dev &middot; github.com/jonasfrey
+    </div>
+
+</div>
+
+</body>
+</html>
