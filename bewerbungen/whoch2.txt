@@ -1,0 +1,131 @@
+
+w hoch 2 GmbH
+Bern
+
+
+Speichern
+
+Einfach bewerben
+Vor 3 Wochen
+
+Full Stack Software Developer
+29 Juli 2026
+70 – 80%
+Festanstellung
+Deutsch (Fliessend), Englisch (Fliessend)
+Effingerstrasse 15, 3008 Bern
+CHF 74 950 - 114 950/Jahr
+Gehaltsschätzung von jobs.ch
+Du passt sehr gut zu diesem Job!
+
+Deine Erfahrung mit dieser ...
+Der Abschluss in Wirtschaft ...
+Verbessere diese Fähigkeit, um einen ...
+Passt dieser Job zu dir?
+
+
+Match anzeigen
+Über den Job
+
+
+
+Wir sind ein erfolgreiches Unternehmen, das Beratungs-, Forschungs-, statistische Analyse- und Softwareentwicklungsdienstleistungen für Kunden aus verschiedenen Branchen anbietet. Mit unserer Arbeit tragen wir zur Verbesserung des Gesundheitswesens in der Schweiz und zur Förderung der digitalen Transformation bei. Einen echten Mehrwert zu schaffen und die Zufriedenheit unserer Kunden sicherzustellen, stehen im Zentrum unseres Handelns.
+
+ 
+
+Zur Verstärkung unseres Teams suchen wir einen Full Stack Software Developer, der mit Leidenschaft skalierbare, zuverlässige und wartbare Softwarelösungen entwickelt. Du wirst aktiv an der Konzeption und Entwicklung unserer Produkte mitwirken und unsere Technologielandschaft weiterentwickeln.
+
+Kurz gesagt: Wir sorgen dafür, dass wir die richtigen Produkte entwickeln – Du sorgst dafür, dass wir sie richtig entwickeln.
+
+Wir bieten ein hervorragendes Team und eine Unternehmenskultur, die auf Vertrauen, Eigenverantwortung und Zusammenarbeit basiert. Du hast die Möglichkeit, eigene Ideen einzubringen und dich fachlich sowie persönlich weiterzuentwickeln.
+
+ 
+
+Deine Aufgaben
+
+Konzeption, Entwicklung und Wartung moderner Webanwendungen
+Implementierung neuer Funktionen über den gesamten Stack hinweg – von der Datenbank bis zur Benutzeroberfläche
+Entwicklung von Backend-Services mit Python und Django
+Aufbau und Betrieb containerisierter Anwendungen mit Docker und Kubernetes
+Entwurf und Verwaltung von PostgreSQL-Datenbanken
+Entwicklung responsiver und benutzerfreundlicher Oberflächen mit Vue.js / React / Angular
+Sicherstellung von Softwarequalität, Performance und Wartbarkeit
+Mitwirkung bei der Weiterentwicklung unserer Softwarearchitektur und unseres Technologie-Stacks
+Enge Zusammenarbeit mit Projektteams und Fachexperten zur Bereitstellung kundenorientierter Lösungen
+Unterstützung bei Deployment-, Automatisierungs- und Monitoring-Aufgaben
+ 
+
+Dein Profil
+
+Du behältst das grosse Ganze im Blick und achtest gleichzeitig auf Details. Du löst gerne komplexe Probleme, lieferst qualitativ hochwertige Resultate und bringst dich aktiv in technische Diskussionen ein.
+
+Nachgewiesene Erfahrung als Full Stack Software Developer (mindestens 2 Jahre)
+Erfahrung im Prompt-Engineering
+Sehr gute Kenntnisse in Python
+Praktische Erfahrung mit Docker und Kubernetes
+Fundierte Kenntnisse in PostgreSQL
+Erfahrung mit Vue.js und anderen modernen Frontend-Technologien
+Vertrautheit mit Git sowie CI/CD-Workflows
+Erfahrung im Entwurf und der Nutzung von REST-APIs
+Begeisterung für sauberen, wartbaren und skalierbaren Code
+Hochschulabschluss in Informatik oder einem verwandten Fachgebiet von Vorteil
+Fliessende Deutsch- und Englischkenntnisse; Französisch-/Italienischkenntnisse sind von Vorteil
+Von Vorteil
+
+Kenntnisse in Data Science und Statistik
+Erfahrung im Gesundheitswesen
+GitLab CI/CD
+Automatisierte Tests und Unit-Tests
+Domain-Driven Design (DDD)
+DevOps-Praktiken
+Design Patterns und Prinzipien der Softwarearchitektur
+Monitoring- und Observability-Tools
+Wir freuen uns darauf, von Dir zu hören. Sende uns Deine Bewerbungsunterlagen und gestalte mit uns wirkungsvolle digitale Lösungen.
+
+Über das Unternehmen
+
+w hoch 2 GmbH
+Bern
+
+Firmenprofil ansehen
+Branche nicht angegeben
+21 - 50 Mitarbeitende
+1 Job
+Benefits
+Haustiere erlaubt
+
+Zusatzleistungen bei Pensionskasse
+
+Kein Dresscode
+
+Mehrsprachige Organisation
+
+Heimarbeit/Homeoffice
+
+Nachhaltigkeitsstrategie
+
+Jobsharing
+
+Überstundenvergütung
+
+Ethnisch vielfältige Belegschaft
+
+Unfallversicherung
+
+Teilzeitarbeit
+
+Möglichkeit zu unbezahlten Ferien
+
+Arbeitsplätze für Menschen mit Behinderung
+
+Gratis Getränke
+
+Lage in der Innenstadt
+
+Flexible Arbeitszeit
+
+Gute öffentliche Verkehrsanbindung
+
+https://www.w-hoch2.ch
+
+
