@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jonasfrey – All GitHub Repos (199)</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#0d1117;color:#e6edf3;min-height:100vh}
+header{background:#161b22;border-bottom:1px solid #30363d;padding:14px 24px;display:flex;align-items:center;gap:10px;position:sticky;top:0;z-index:10;flex-wrap:wrap}
+header h1{font-size:17px;font-weight:600}
+.count{font-size:12px;color:#8b949e;background:#30363d;padding:2px 8px;border-radius:20px}
+.controls{margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+input[type=search]{background:#0d1117;border:1px solid #30363d;border-radius:6px;color:#e6edf3;padding:6px 12px;font-size:13px;width:200px;outline:none}
+input[type=search]:focus{border-color:#58a6ff}
+select{background:#161b22;border:1px solid #30363d;border-radius:6px;color:#e6edf3;padding:6px 10px;font-size:13px;cursor:pointer;outline:none}
+select:focus{border-color:#58a6ff}
+main{padding:20px 24px;max-width:1300px;margin:0 auto}
+.stats-bar{display:flex;gap:18px;margin-bottom:14px;font-size:13px;color:#8b949e;flex-wrap:wrap}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:12px}
+.card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:7px;transition:border-color .15s}
+.card:hover{border-color:#58a6ff}
+.card-title{display:flex;align-items:center;gap:7px}
+.card-title a{color:#58a6ff;font-weight:600;font-size:14px;text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-title a:hover{text-decoration:underline}
+.fork-badge{font-size:11px;color:#8b949e;border:1px solid #30363d;border-radius:20px;padding:1px 7px;white-space:nowrap;flex-shrink:0}
+.private-badge{font-size:11px;color:#f0883e;border:1px solid #f0883e;border-radius:20px;padding:1px 7px;white-space:nowrap;flex-shrink:0}
+.desc{font-size:12px;color:#8b949e;line-height:1.5}
+.meta{display:flex;gap:12px;align-items:center;font-size:12px;color:#8b949e;flex-wrap:wrap}
+.lang{display:flex;align-items:center;gap:5px}
+.lang-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stars{display:flex;align-items:center;gap:3px}
+.updated{margin-left:auto;font-size:11px}
+.no-results{text-align:center;color:#8b949e;padding:60px 20px;font-size:16px;display:none}
+</style>
+</head>
+<body>
+<header>
+  <svg height="20" viewBox="0 0 16 16" width="20" fill="#e6edf3"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>
+  <h1>jonasfrey</h1>
+  <span class="count" id="shown-count">199 repos</span>
+  <div class="controls">
+    <input type="search" id="search" placeholder="Filter repositories…" oninput="filterRepos()">
+    <select id="sort" onchange="filterRepos()">
+      <option value="updated">Recently updated</option>
+      <option value="stars">Most stars</option>
+      <option value="name">Name (A–Z)</option>
+      <option value="forks">Most forks</option>
+    </select>
+    <select id="lang-filter" onchange="filterRepos()">
+      <option value="">All languages</option>
+      <option value="Assembly">Assembly</option><option value="AutoHotkey">AutoHotkey</option><option value="C">C</option><option value="C#">C#</option><option value="G-code">G-code</option><option value="HTML">HTML</option><option value="JavaScript">JavaScript</option><option value="Jupyter Notebook">Jupyter Notebook</option><option value="Kotlin">Kotlin</option><option value="OpenSCAD">OpenSCAD</option><option value="Python">Python</option><option value="Rust">Rust</option><option value="Shell">Shell</option><option value="TypeScript">TypeScript</option><option value="Vue">Vue</option>
+    </select>
+    <select id="type-filter" onchange="filterRepos()">
+      <option value="">All types</option>
+      <option value="source">Sources only</option>
+      <option value="fork">Forks only</option>
+    </select>
+  </div>
+</header>
+<main>
+  <div class="stats-bar">
+    <span>★ 30 total stars</span>
+    <span>📦 194 original</span>
+    <span>⑂ 5 forks</span>
+    <span>🌐 15 languages</span>
+  </div>
+  <div class="grid" id="grid"><div class="card" data-name="pilotless_poses2" data-desc="" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2026-07-02T12:44:41Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/pilotless_poses2" target="_blank" title="pilotless_poses2">pilotless_poses2</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2026-07-02T12:44:41Z">Updated 1m ago</span></div>
+  </div><div class="card" data-name="application_template" data-desc="" data-lang="Shell" data-stars="0" data-forks="0" data-updated="2026-07-02T11:38:14Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/application_template" target="_blank" title="application_template">application_template</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#89e051"></span>Shell</span><span class="updated" title="2026-07-02T11:38:14Z">Updated 1h ago</span></div>
+  </div><div class="card" data-name="timetracker" data-desc="" data-lang="" data-stars="0" data-forks="0" data-updated="2026-07-02T11:02:06Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/timetracker" target="_blank" title="timetracker">timetracker</a>
+      
+    </div>
+    
+    <div class="meta"><span class="updated" title="2026-07-02T11:02:06Z">Updated 1h ago</span></div>
+  </div><div class="card" data-name="machine_learning" data-desc="" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2026-07-01T13:03:32Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/machine_learning" target="_blank" title="machine_learning">machine_learning</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2026-07-01T13:03:32Z">Updated 23h ago</span></div>
+  </div><div class="card" data-name="core_cutter2" data-desc="a video cutter " data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2026-06-30T13:25:42Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/core_cutter2" target="_blank" title="core_cutter2">core_cutter2</a>
+      
+    </div>
+    <p class="desc">a video cutter </p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2026-06-30T13:25:42Z">Updated 1d ago</span></div>
+  </div><div class="card" data-name="oo2" data-desc="" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2026-06-28T22:42:32Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/oo2" target="_blank" title="oo2">oo2</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2026-06-28T22:42:32Z">Updated 3d ago</span></div>
+  </div><div class="card" data-name="motion_maker2" data-desc="" data-lang="HTML" data-stars="0" data-forks="0" data-updated="2026-06-26T07:43:13Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/motion_maker2" target="_blank" title="motion_maker2">motion_maker2</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#e34c26"></span>HTML</span><span class="updated" title="2026-06-26T07:43:13Z">Updated 6d ago</span></div>
+  </div><div class="card" data-name="pattern_projector" data-desc="" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2026-06-24T12:54:02Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/pattern_projector" target="_blank" title="pattern_projector">pattern_projector</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2026-06-24T12:54:02Z">Updated 7d ago</span></div>
+  </div><div class="card" data-name="cams_corder" data-desc="recording multiple webcameras" data-lang="TypeScript" data-stars="0" data-forks="0" data-updated="2026-06-19T15:13:55Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/cams_corder" target="_blank" title="cams_corder">cams_corder</a>
+      
+    </div>
+    <p class="desc">recording multiple webcameras</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#3178c6"></span>TypeScript</span><span class="updated" title="2026-06-19T15:13:55Z">Updated 12d ago</span></div>
+  </div><div class="card" data-name="lovely_labels" data-desc="" data-lang="HTML" data-stars="0" data-forks="0" data-updated="2026-06-14T11:35:00Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/lovely_labels" target="_blank" title="lovely_labels">lovely_labels</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#e34c26"></span>HTML</span><span class="updated" title="2026-06-14T11:35:00Z">Updated 18d ago</span></div>
+  </div><div class="card" data-name="roseriser" data-desc="dxf -> js -> scad -> stl" data-lang="OpenSCAD" data-stars="0" data-forks="0" data-updated="2026-06-13T22:14:51Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/roseriser" target="_blank" title="roseriser">roseriser</a>
+      
+    </div>
+    <p class="desc">dxf -&gt; js -&gt; scad -&gt; stl</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#8b949e"></span>OpenSCAD</span><span class="updated" title="2026-06-13T22:14:51Z">Updated 18d ago</span></div>
+  </div><div class="card" data-name="gibb_hf_abschlusspruefung_applikation" data-desc="" data-lang="Vue" data-stars="0" data-forks="0" data-updated="2026-06-13T09:01:20Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/gibb_hf_abschlusspruefung_applikation" target="_blank" title="gibb_hf_abschlusspruefung_applikation">gibb_hf_abschlusspruefung_applikation</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#41b883"></span>Vue</span><span class="updated" title="2026-06-13T09:01:20Z">Updated 19d ago</span></div>
+  </div><div class="card" data-name="relief_riser" data-desc="" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2026-06-10T09:11:44Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/relief_riser" target="_blank" title="relief_riser">relief_riser</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2026-06-10T09:11:44Z">Updated 22d ago</span></div>
+  </div><div class="card" data-name="container_creator" data-desc="" data-lang="" data-stars="0" data-forks="0" data-updated="2026-06-03T07:10:47Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/container_creator" target="_blank" title="container_creator">container_creator</a>
+      
+    </div>
+    
+    <div class="meta"><span class="updated" title="2026-06-03T07:10:47Z">Updated 29d ago</span></div>
+  </div><div class="card" data-name="print_preparer" data-desc="" data-lang="" data-stars="0" data-forks="0" data-updated="2026-06-03T04:36:52Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/print_preparer" target="_blank" title="print_preparer">print_preparer</a>
+      
+    </div>
+    
+    <div class="meta"><span class="updated" title="2026-06-03T04:36:52Z">Updated 29d ago</span></div>
+  </div><div class="card" data-name="cncjs" data-desc="cncjs local app" data-lang="G-code" data-stars="0" data-forks="0" data-updated="2026-06-01T15:45:31Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/cncjs" target="_blank" title="cncjs">cncjs</a>
+      
+    </div>
+    <p class="desc">cncjs local app</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#8b949e"></span>G-code</span><span class="updated" title="2026-06-01T15:45:31Z">Updated 1mo ago</span></div>
+  </div><div class="card" data-name="object_orienter" data-desc="" data-lang="HTML" data-stars="0" data-forks="0" data-updated="2026-05-31T22:35:36Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/object_orienter" target="_blank" title="object_orienter">object_orienter</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#e34c26"></span>HTML</span><span class="updated" title="2026-05-31T22:35:36Z">Updated 1mo ago</span></div>
+  </div><div class="card" data-name="dep-lb2-taskflow" data-desc="" data-lang="TypeScript" data-stars="0" data-forks="0" data-updated="2026-05-30T05:22:28Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/dep-lb2-taskflow" target="_blank" title="dep-lb2-taskflow">dep-lb2-taskflow</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#3178c6"></span>TypeScript</span><span class="updated" title="2026-05-30T05:22:28Z">Updated 1mo ago</span></div>
+  </div><div class="card" data-name="prompt_engeneer_ds" data-desc="" data-lang="" data-stars="0" data-forks="0" data-updated="2026-05-25T19:48:26Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/prompt_engeneer_ds" target="_blank" title="prompt_engeneer_ds">prompt_engeneer_ds</a>
+      
+    </div>
+    
+    <div class="meta"><span class="updated" title="2026-05-25T19:48:26Z">Updated 1mo ago</span></div>
+  </div><div class="card" data-name="gibb_dep_modul" data-desc="" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2026-05-19T21:04:06Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/GIBB_DEP_modul" target="_blank" title="GIBB_DEP_modul">GIBB_DEP_modul</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2026-05-19T21:04:06Z">Updated 1mo ago</span></div>
+  </div><div class="card" data-name="frame_forger" data-desc="" data-lang="TypeScript" data-stars="0" data-forks="0" data-updated="2026-05-14T19:35:34Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/frame_forger" target="_blank" title="frame_forger">frame_forger</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#3178c6"></span>TypeScript</span><span class="updated" title="2026-05-14T19:35:34Z">Updated 1mo ago</span></div>
+  </div><div class="card" data-name="bergform.ch" data-desc="wir sind wanderbar!" data-lang="HTML" data-stars="0" data-forks="0" data-updated="2026-04-22T08:00:06Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/bergform.ch" target="_blank" title="bergform.ch">bergform.ch</a>
+      
+    </div>
+    <p class="desc">wir sind wanderbar!</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#e34c26"></span>HTML</span><span class="updated" title="2026-04-22T08:00:06Z">Updated 2mo ago</span></div>
+  </div><div class="card" data-name="giffromvideo" data-desc="isomorphic webgui video editor" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2026-04-18T15:26:27Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/giffromvideo" target="_blank" title="giffromvideo">giffromvideo</a>
+      
+    </div>
+    <p class="desc">isomorphic webGUI video editor</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2026-04-18T15:26:27Z">Updated 2mo ago</span></div>
+  </div><div class="card" data-name="roseriser2" data-desc="" data-lang="TypeScript" data-stars="0" data-forks="0" data-updated="2026-04-18T15:25:19Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/roseriser2" target="_blank" title="roseriser2">roseriser2</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#3178c6"></span>TypeScript</span><span class="updated" title="2026-04-18T15:25:19Z">Updated 2mo ago</span></div>
+  </div><div class="card" data-name="jonasfrey.dev" data-desc="" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2026-04-15T08:22:41Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/jonasfrey.dev" target="_blank" title="jonasfrey.dev">jonasfrey.dev</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2026-04-15T08:22:41Z">Updated 2mo ago</span></div>
+  </div><div class="card" data-name="topotransformer" data-desc="gui map -> bw topo images -> 3d models" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2026-04-10T15:27:37Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/topotransformer" target="_blank" title="topotransformer">topotransformer</a>
+      
+    </div>
+    <p class="desc">GUI map -&gt; bw topo images -&gt; 3d models</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2026-04-10T15:27:37Z">Updated 2mo ago</span></div>
+  </div><div class="card" data-name="topoprints.net" data-desc="topographic models from around the world" data-lang="HTML" data-stars="0" data-forks="0" data-updated="2026-04-09T11:29:24Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/topoprints.net" target="_blank" title="topoprints.net">topoprints.net</a>
+      
+    </div>
+    <p class="desc">topographic models from around the world</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#e34c26"></span>HTML</span><span class="updated" title="2026-04-09T11:29:24Z">Updated 2mo ago</span></div>
+  </div><div class="card" data-name="gpu-monitor-browser-gui" data-desc="a browser gui for nvidia smi" data-lang="JavaScript" data-stars="21" data-forks="1" data-updated="2025-03-17T06:31:08Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/gpu-monitor-browser-gui" target="_blank" title="gpu-monitor-browser-gui">gpu-monitor-browser-gui</a>
+      
+    </div>
+    <p class="desc">a browser gui for nvidia smi</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="stars">★ 21</span><span>⑂ 1</span><span class="updated" title="2025-03-17T06:31:08Z">Updated 1y ago</span></div>
+  </div><div class="card" data-name="calendarcreator" data-desc="a tiny webapp to create a calendar view template for physical printing " data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2026-03-16T20:45:44Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/calendarcreator" target="_blank" title="calendarcreator">calendarcreator</a>
+      
+    </div>
+    <p class="desc">a tiny webapp to create a calendar view template for physical printing </p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2026-03-16T20:45:44Z">Updated 3mo ago</span></div>
+  </div><div class="card" data-name="iot_garden" data-desc="software for iot devices for the garden" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2026-03-21T08:12:21Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/iot_garden" target="_blank" title="iot_garden">iot_garden</a>
+      
+    </div>
+    <p class="desc">software for iot devices for the garden</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2026-03-21T08:12:21Z">Updated 3mo ago</span></div>
+  </div><div class="card" data-name="video_wizard" data-desc="a video cutter that uses ai. video -> audio -> text -> video" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2026-03-21T17:47:52Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/video_wizard" target="_blank" title="video_wizard">video_wizard</a>
+      
+    </div>
+    <p class="desc">a video cutter that uses AI. video -&gt; audio -&gt; text -&gt; video</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2026-03-21T17:47:52Z">Updated 3mo ago</span></div>
+  </div><div class="card" data-name="browser_crud_app_template" data-desc="lightweight isomorphic native javascript  framework for full desktop applications" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2026-03-21T23:10:21Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/browser_crud_app_template" target="_blank" title="browser_crud_app_template">browser_crud_app_template</a>
+      
+    </div>
+    <p class="desc">lightweight isomorphic native javascript  framework for full desktop applications</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2026-03-21T23:10:21Z">Updated 3mo ago</span></div>
+  </div><div class="card" data-name="tee_dunker" data-desc="automatically dunking tea bags using 3d printing and esp32" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2026-03-22T00:47:43Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/tee_dunker" target="_blank" title="tee_dunker">tee_dunker</a>
+      
+    </div>
+    <p class="desc">automatically dunking tea bags using 3d printing and esp32</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2026-03-22T00:47:43Z">Updated 3mo ago</span></div>
+  </div><div class="card" data-name="prettypaths" data-desc="" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2026-03-24T15:40:29Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/prettypaths" target="_blank" title="prettypaths">prettypaths</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2026-03-24T15:40:29Z">Updated 3mo ago</span></div>
+  </div><div class="card" data-name="ai_stacking" data-desc="image aligning and stacking using ai" data-lang="" data-stars="0" data-forks="0" data-updated="2026-03-17T11:37:09Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/ai_stacking" target="_blank" title="ai_stacking">ai_stacking</a>
+      
+    </div>
+    <p class="desc">image aligning and stacking using AI</p>
+    <div class="meta"><span class="updated" title="2026-03-17T11:37:09Z">Updated 3mo ago</span></div>
+  </div><div class="card" data-name="polyprints" data-desc="low polygon 3d printable models" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2026-03-08T22:12:15Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/polyprints" target="_blank" title="polyprints">polyprints</a>
+      
+    </div>
+    <p class="desc">low polygon 3d printable models</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2026-03-08T22:12:15Z">Updated 3mo ago</span></div>
+  </div><div class="card" data-name="polyprints_website" data-desc="polyprints 3d website" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2026-03-07T11:30:01Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/polyprints_website" target="_blank" title="polyprints_website">polyprints_website</a>
+      
+    </div>
+    <p class="desc">polyprints 3d website</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2026-03-07T11:30:01Z">Updated 3mo ago</span></div>
+  </div><div class="card" data-name="coding_conventions_guidelines_syntax_rules" data-desc="coding_conventions_guidelines_syntax_rules" data-lang="Shell" data-stars="0" data-forks="0" data-updated="2026-03-06T12:44:50Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/coding_conventions_guidelines_syntax_rules" target="_blank" title="coding_conventions_guidelines_syntax_rules">coding_conventions_guidelines_syntax_rules</a>
+      
+    </div>
+    <p class="desc">coding_conventions_guidelines_syntax_rules</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#89e051"></span>Shell</span><span class="updated" title="2026-03-06T12:44:50Z">Updated 3mo ago</span></div>
+  </div><div class="card" data-name="light_learner" data-desc="learn programming through led lights  midi controller" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2026-03-01T21:17:40Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/light_learner" target="_blank" title="light_learner">light_learner</a>
+      
+    </div>
+    <p class="desc">learn programming through led lights  midi controller</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2026-03-01T21:17:40Z">Updated 4mo ago</span></div>
+  </div><div class="card" data-name="keybindings_linux_and_windows" data-desc="remap arrow keys to ijkl and make use of caps lock, holy shit i am lucky i found this, this is gold!!!" data-lang="AutoHotkey" data-stars="0" data-forks="0" data-updated="2026-03-01T08:18:56Z" data-fork="true">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/keybindings_linux_and_windows" target="_blank" title="keybindings_linux_and_windows">keybindings_linux_and_windows</a>
+      <span class="fork-badge">fork</span>
+    </div>
+    <p class="desc">Remap arrow keys to ijkl and make use of caps lock, holy shit i am lucky i found this, this is gold!!!</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#8b949e"></span>AutoHotkey</span><span class="updated" title="2026-03-01T08:18:56Z">Updated 4mo ago</span></div>
+  </div><div class="card" data-name="pathperformer" data-desc="paths to results" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2026-02-27T20:40:23Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/pathperformer" target="_blank" title="pathperformer">pathperformer</a>
+      
+    </div>
+    <p class="desc">paths to results</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2026-02-27T20:40:23Z">Updated 4mo ago</span></div>
+  </div><div class="card" data-name="projectpresenter" data-desc="a overview of all source code projects" data-lang="" data-stars="0" data-forks="0" data-updated="2026-02-26T12:40:09Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/projectpresenter" target="_blank" title="projectpresenter">projectpresenter</a>
+      
+    </div>
+    <p class="desc">a overview of all source code projects</p>
+    <div class="meta"><span class="updated" title="2026-02-26T12:40:09Z">Updated 4mo ago</span></div>
+  </div><div class="card" data-name="chrome_extension_readability" data-desc="a generic readability extension for any website" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2026-02-17T09:06:04Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/chrome_extension_readability" target="_blank" title="chrome_extension_readability">chrome_extension_readability</a>
+      
+    </div>
+    <p class="desc">a generic readability extension for any website</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2026-02-17T09:06:04Z">Updated 4mo ago</span></div>
+  </div><div class="card" data-name="learn_vue_routes" data-desc="a small repo to learn how vue routes work" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2026-02-15T07:53:05Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/learn_vue_routes" target="_blank" title="learn_vue_routes">learn_vue_routes</a>
+      
+    </div>
+    <p class="desc">a small repo to learn how vue routes work</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2026-02-15T07:53:05Z">Updated 4mo ago</span></div>
+  </div><div class="card" data-name="simplesketch.deno.dev" data-desc="a simple web application for sketches" data-lang="HTML" data-stars="0" data-forks="0" data-updated="2026-02-06T13:41:06Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/simplesketch.deno.dev" target="_blank" title="simplesketch.deno.dev">simplesketch.deno.dev</a>
+      
+    </div>
+    <p class="desc">a simple web application for sketches</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#e34c26"></span>HTML</span><span class="updated" title="2026-02-06T13:41:06Z">Updated 4mo ago</span></div>
+  </div><div class="card" data-name="markdown_to_spicker" data-desc="convert markdown to a spicker" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2026-01-27T22:30:14Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/markdown_to_spicker" target="_blank" title="markdown_to_spicker">markdown_to_spicker</a>
+      
+    </div>
+    <p class="desc">convert markdown to a spicker</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2026-01-27T22:30:14Z">Updated 5mo ago</span></div>
+  </div><div class="card" data-name="robotjs_proxy" data-desc="this is a proxy to robot.js "node.js desktop automation. "" data-lang="JavaScript" data-stars="1" data-forks="0" data-updated="2024-04-02T10:13:48Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/robotjs_proxy" target="_blank" title="robotjs_proxy">robotjs_proxy</a>
+      
+    </div>
+    <p class="desc">This is a proxy to robot.js &quot;Node.js Desktop Automation. &quot;</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="stars">★ 1</span><span class="updated" title="2024-04-02T10:13:48Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="ohlalastoffebernch" data-desc="" data-lang="HTML" data-stars="0" data-forks="0" data-updated="2026-01-17T09:24:30Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/ohlalastoffebernch" target="_blank" title="ohlalastoffebernch">ohlalastoffebernch</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#e34c26"></span>HTML</span><span class="updated" title="2026-01-17T09:24:30Z">Updated 5mo ago</span></div>
+  </div><div class="card" data-name="gibb_web1_projekt" data-desc="" data-lang="HTML" data-stars="0" data-forks="0" data-updated="2025-12-20T09:52:34Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/GIBB_WEB1_projekt" target="_blank" title="GIBB_WEB1_projekt">GIBB_WEB1_projekt</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#e34c26"></span>HTML</span><span class="updated" title="2025-12-20T09:52:34Z">Updated 6mo ago</span></div>
+  </div><div class="card" data-name="openscad" data-desc="" data-lang="OpenSCAD" data-stars="0" data-forks="0" data-updated="2025-11-28T08:43:19Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/openscad" target="_blank" title="openscad">openscad</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#8b949e"></span>OpenSCAD</span><span class="updated" title="2025-11-28T08:43:19Z">Updated 7mo ago</span></div>
+  </div><div class="card" data-name="cybersecurity_lessons" data-desc="cybersecurity" data-lang="Shell" data-stars="0" data-forks="0" data-updated="2025-11-27T17:35:49Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/cybersecurity_lessons" target="_blank" title="cybersecurity_lessons">cybersecurity_lessons</a>
+      
+    </div>
+    <p class="desc">cybersecurity</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#89e051"></span>Shell</span><span class="updated" title="2025-11-27T17:35:49Z">Updated 7mo ago</span></div>
+  </div><div class="card" data-name="cadprogramming" data-desc="" data-lang="Python" data-stars="0" data-forks="0" data-updated="2025-11-26T10:29:08Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/CADprogramming" target="_blank" title="CADprogramming">CADprogramming</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#3572A5"></span>Python</span><span class="updated" title="2025-11-26T10:29:08Z">Updated 7mo ago</span></div>
+  </div><div class="card" data-name="blender_auto_render" data-desc="automatically render with blender" data-lang="Python" data-stars="0" data-forks="0" data-updated="2025-11-17T12:20:20Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/blender_auto_render" target="_blank" title="blender_auto_render">blender_auto_render</a>
+      
+    </div>
+    <p class="desc">automatically render with blender</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#3572A5"></span>Python</span><span class="updated" title="2025-11-17T12:20:20Z">Updated 7mo ago</span></div>
+  </div><div class="card" data-name="todotracker.deno.dev" data-desc="todolist for web" data-lang="JavaScript" data-stars="1" data-forks="0" data-updated="2025-10-13T12:02:17Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/todotracker.deno.dev" target="_blank" title="todotracker.deno.dev">todotracker.deno.dev</a>
+      
+    </div>
+    <p class="desc">todolist for web</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="stars">★ 1</span><span class="updated" title="2025-10-13T12:02:17Z">Updated 8mo ago</span></div>
+  </div><div class="card" data-name="lcm" data-desc="" data-lang="" data-stars="0" data-forks="0" data-updated="2025-10-07T16:21:10Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/LCM" target="_blank" title="LCM">LCM</a>
+      
+    </div>
+    
+    <div class="meta"><span class="updated" title="2025-10-07T16:21:10Z">Updated 8mo ago</span></div>
+  </div><div class="card" data-name="f_add_css" data-desc="function to add css to html" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2025-09-09T10:09:42Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/f_add_css" target="_blank" title="f_add_css">f_add_css</a>
+      
+    </div>
+    <p class="desc">function to add css to html</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2025-09-09T10:09:42Z">Updated 9mo ago</span></div>
+  </div><div class="card" data-name="customcompare" data-desc="a free and opensource webapp to compare two images / or videos" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2025-09-09T10:08:52Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/customcompare" target="_blank" title="customcompare">customcompare</a>
+      
+    </div>
+    <p class="desc">a free and opensource webapp to compare two images / or videos</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2025-09-09T10:08:52Z">Updated 9mo ago</span></div>
+  </div><div class="card" data-name="handyhelpers" data-desc="a collection of usefull functions" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2025-09-07T10:25:29Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/handyhelpers" target="_blank" title="handyhelpers">handyhelpers</a>
+      
+    </div>
+    <p class="desc">a collection of usefull functions</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2025-09-07T10:25:29Z">Updated 9mo ago</span></div>
+  </div><div class="card" data-name="deno_test_server_and_client_side" data-desc="very basic wrapper functions to be ablel to run deno test also in the client" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2025-09-07T10:20:53Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/deno_test_server_and_client_side" target="_blank" title="deno_test_server_and_client_side">deno_test_server_and_client_side</a>
+      
+    </div>
+    <p class="desc">very basic wrapper functions to be ablel to run deno test also in the client</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2025-09-07T10:20:53Z">Updated 9mo ago</span></div>
+  </div><div class="card" data-name="thumbnailer.deno.dev" data-desc="a simple pohoto editor" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2025-09-03T07:58:35Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/thumbnailer.deno.dev" target="_blank" title="thumbnailer.deno.dev">thumbnailer.deno.dev</a>
+      
+    </div>
+    <p class="desc">a simple pohoto editor</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2025-09-03T07:58:35Z">Updated 10mo ago</span></div>
+  </div><div class="card" data-name="stellarium_gornergrat_betriebspraktikum_2023_imagemanipulation" data-desc="" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:46Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/stellarium_gornergrat_betriebspraktikum_2023_imagemanipulation" target="_blank" title="stellarium_gornergrat_betriebspraktikum_2023_imagemanipulation">stellarium_gornergrat_betriebspraktikum_2023_imagemanipulation</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:46Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="stlsculpter" data-desc="an app to create an stl " data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2025-07-18T14:01:05Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/stlsculpter" target="_blank" title="stlsculpter">stlsculpter</a>
+      
+    </div>
+    <p class="desc">an app to create an stl </p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2025-07-18T14:01:05Z">Updated 11mo ago</span></div>
+  </div><div class="card" data-name="pixelpeeper" data-desc="a tool to repeat pixels" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2025-06-12T11:01:39Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/pixelpeeper" target="_blank" title="pixelpeeper">pixelpeeper</a>
+      
+    </div>
+    <p class="desc">a tool to repeat pixels</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2025-06-12T11:01:39Z">Updated 1y ago</span></div>
+  </div><div class="card" data-name="dotdetector.deno.dev" data-desc="a webapp to detect cross stitch embroidery patterns and convert them to json" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2025-05-28T13:19:14Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/dotdetector.deno.dev" target="_blank" title="dotdetector.deno.dev">dotdetector.deno.dev</a>
+      
+    </div>
+    <p class="desc">a webapp to detect cross stitch embroidery patterns and convert them to json</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2025-05-28T13:19:14Z">Updated 1y ago</span></div>
+  </div><div class="card" data-name="cybersecurity_project" data-desc="" data-lang="HTML" data-stars="0" data-forks="0" data-updated="2025-05-19T12:29:24Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/cybersecurity_project" target="_blank" title="cybersecurity_project">cybersecurity_project</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#e34c26"></span>HTML</span><span class="updated" title="2025-05-19T12:29:24Z">Updated 1y ago</span></div>
+  </div><div class="card" data-name="kernelcreator" data-desc="a simple webapp to learn understanding a convolution kernel" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2025-03-26T14:11:50Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/kernelcreator" target="_blank" title="kernelcreator">kernelcreator</a>
+      
+    </div>
+    <p class="desc">a simple webapp to learn understanding a convolution kernel</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2025-03-26T14:11:50Z">Updated 1y ago</span></div>
+  </div><div class="card" data-name="dxfdesigner-" data-desc="a webapp to create dxf files by using the power of the javascript scripting language :>" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2025-03-25T13:49:56Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/dxfdesigner-" target="_blank" title="dxfdesigner-">dxfdesigner-</a>
+      
+    </div>
+    <p class="desc">a webapp to create dxf files by using the power of the javascript scripting language :&gt;</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2025-03-25T13:49:56Z">Updated 1y ago</span></div>
+  </div><div class="card" data-name="websersocket" data-desc="this is a lightweight, easy-to-use module for deno that streamlines the creation and management of web, file, and websocket servers. leveraging deno's built-in serve function, this module simplifies the process of setting up servers, making it accessible even to beginners, while providing enough flexibility for more advanced users." data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2025-03-17T11:41:49Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/websersocket" target="_blank" title="websersocket">websersocket</a>
+      
+    </div>
+    <p class="desc">This is a lightweight, easy-to-use module for Deno that streamlines the creation and management of web, file, and WebSocket servers. Leveraging Deno's built-in serve function, this module simplifies the process of setting up servers, making it accessible even to beginners, while providing enough flexibility for more advanced users.</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2025-03-17T11:41:49Z">Updated 1y ago</span></div>
+  </div><div class="card" data-name="atomicautomata" data-desc="automata for the win!" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2025-03-13T14:55:26Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/atomicautomata" target="_blank" title="atomicautomata">atomicautomata</a>
+      
+    </div>
+    <p class="desc">automata for the win!</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2025-03-13T14:55:26Z">Updated 1y ago</span></div>
+  </div><div class="card" data-name="drueedee" data-desc="" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2025-01-29T22:35:16Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/drueedee" target="_blank" title="drueedee">drueedee</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2025-01-29T22:35:16Z">Updated 1y ago</span></div>
+  </div><div class="card" data-name="template" data-desc="" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2025-01-23T16:14:39Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/template" target="_blank" title="template">template</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2025-01-23T16:14:39Z">Updated 1y ago</span></div>
+  </div><div class="card" data-name="midimanipulator" data-desc="manipulate midi files" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-12-23T18:46:57Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/midimanipulator" target="_blank" title="midimanipulator">midimanipulator</a>
+      
+    </div>
+    <p class="desc">manipulate midi files</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-12-23T18:46:57Z">Updated 1y ago</span></div>
+  </div><div class="card" data-name="angleanalyzer" data-desc="measure angles on an image" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-12-19T10:26:39Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/angleanalyzer" target="_blank" title="angleanalyzer">angleanalyzer</a>
+      
+    </div>
+    <p class="desc">measure angles on an image</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-12-19T10:26:39Z">Updated 1y ago</span></div>
+  </div><div class="card" data-name="notennotierer" data-desc="a webtool to make music" data-lang="HTML" data-stars="0" data-forks="0" data-updated="2024-11-19T13:07:12Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/NotenNotierer" target="_blank" title="NotenNotierer">NotenNotierer</a>
+      
+    </div>
+    <p class="desc">a webtool to make music</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#e34c26"></span>HTML</span><span class="updated" title="2024-11-19T13:07:12Z">Updated 1y ago</span></div>
+  </div><div class="card" data-name="doodledouble" data-desc="a custom spot it / double game where one can make custom icons " data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-11-05T13:42:41Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/doodledouble" target="_blank" title="doodledouble">doodledouble</a>
+      
+    </div>
+    <p class="desc">a custom spot it / double game where one can make custom icons </p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-11-05T13:42:41Z">Updated 1y ago</span></div>
+  </div><div class="card" data-name="raspi" data-desc="controlling the gpio pins of the raspberry pi , thus raspi" data-lang="JavaScript" data-stars="1" data-forks="0" data-updated="2024-04-04T23:35:00Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/raspi" target="_blank" title="raspi">raspi</a>
+      
+    </div>
+    <p class="desc">controlling the GPIO pins of the raspberry pi , thus raspi</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="stars">★ 1</span><span class="updated" title="2024-04-04T23:35:00Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="denojs_f_a_o_missing_prop" data-desc="check if two objects have the same properties" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-10-21T12:12:38Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/denojs_f_a_o_missing_prop" target="_blank" title="denojs_f_a_o_missing_prop">denojs_f_a_o_missing_prop</a>
+      
+    </div>
+    <p class="desc">check if two objects have the same properties</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-10-21T12:12:38Z">Updated 1y ago</span></div>
+  </div><div class="card" data-name="practice_player" data-desc="a webapp mp3 player with additional functions for practicing playing along music " data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-10-20T22:02:48Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/practice_player" target="_blank" title="practice_player">practice_player</a>
+      
+    </div>
+    <p class="desc">a webapp mp3 player with additional functions for practicing playing along music </p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-10-20T22:02:48Z">Updated 1y ago</span></div>
+  </div><div class="card" data-name="denojs_f_o_html_from_o_js" data-desc="" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-10-15T09:24:10Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/denojs_f_o_html_from_o_js" target="_blank" title="denojs_f_o_html_from_o_js">denojs_f_o_html_from_o_js</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-10-15T09:24:10Z">Updated 1y ago</span></div>
+  </div><div class="card" data-name="date_functions" data-desc="" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-10-15T08:20:13Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/date_functions" target="_blank" title="date_functions">date_functions</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-10-15T08:20:13Z">Updated 1y ago</span></div>
+  </div><div class="card" data-name="denojs_image_viewer" data-desc="an image browser for the browser " data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-10-02T14:12:20Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/denojs_image_viewer" target="_blank" title="denojs_image_viewer">denojs_image_viewer</a>
+      
+    </div>
+    <p class="desc">an image browser for the browser </p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-10-02T14:12:20Z">Updated 1y ago</span></div>
+  </div><div class="card" data-name="automataaday" data-desc="an automata a day keeps the doctor away!" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-09-04T14:28:42Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/automataaday" target="_blank" title="automataaday">automataaday</a>
+      
+    </div>
+    <p class="desc">an automata a day keeps the doctor away!</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-09-04T14:28:42Z">Updated 1y ago</span></div>
+  </div><div class="card" data-name="anaigiadaykeepsthedoctoraway" data-desc="" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-09-01T09:55:48Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/anaigiadaykeepsthedoctoraway" target="_blank" title="anaigiadaykeepsthedoctoraway">anaigiadaykeepsthedoctoraway</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-09-01T09:55:48Z">Updated 1y ago</span></div>
+  </div><div class="card" data-name="shaderclock" data-desc="a page that simply shows a clock in any graphical form programmed with a gpu shader" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-07-30T10:46:22Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/shaderclock" target="_blank" title="shaderclock">shaderclock</a>
+      
+    </div>
+    <p class="desc">a page that simply shows a clock in any graphical form programmed with a gpu shader</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-07-30T10:46:22Z">Updated 1y ago</span></div>
+  </div><div class="card" data-name="3d_experiences" data-desc="a quick app with 3d experiences" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-07-23T13:30:06Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/3d_experiences" target="_blank" title="3d_experiences">3d_experiences</a>
+      
+    </div>
+    <p class="desc">a quick app with 3d experiences</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-07-23T13:30:06Z">Updated 1y ago</span></div>
+  </div><div class="card" data-name="bodybrowser" data-desc="a app to browse the human body" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-07-22T22:33:54Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/bodybrowser" target="_blank" title="bodybrowser">bodybrowser</a>
+      
+    </div>
+    <p class="desc">a app to browse the human body</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-07-22T22:33:54Z">Updated 1y ago</span></div>
+  </div><div class="card" data-name="freshfragrance" data-desc="a small webapp to create fragrance / parfume" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-07-10T22:00:10Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/freshfragrance" target="_blank" title="freshfragrance">freshfragrance</a>
+      
+    </div>
+    <p class="desc">a small webapp to create fragrance / parfume</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-07-10T22:00:10Z">Updated 1y ago</span></div>
+  </div><div class="card" data-name="tts_browser_extensions" data-desc="tts = text to speech" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-07-09T12:51:09Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/tts_browser_extensions" target="_blank" title="tts_browser_extensions">tts_browser_extensions</a>
+      
+    </div>
+    <p class="desc">tts = text to speech</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-07-09T12:51:09Z">Updated 1y ago</span></div>
+  </div><div class="card" data-name="beatbuilder" data-desc="beatbuilder" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-06-19T14:31:04Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/beatbuilder" target="_blank" title="beatbuilder">beatbuilder</a>
+      
+    </div>
+    <p class="desc">beatbuilder</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-06-19T14:31:04Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="ruspi_microscope" data-desc="controlling a microscope stage with raspberry pi and rust" data-lang="Rust" data-stars="0" data-forks="0" data-updated="2024-06-18T14:17:28Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/ruspi_microscope" target="_blank" title="ruspi_microscope">ruspi_microscope</a>
+      
+    </div>
+    <p class="desc">controlling a microscope stage with raspberry pi and rust</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#dea584"></span>Rust</span><span class="updated" title="2024-06-18T14:17:28Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="ransom_renderer" data-desc="ransom text renderer" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-05-29T21:00:04Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/ransom_renderer" target="_blank" title="ransom_renderer">ransom_renderer</a>
+      
+    </div>
+    <p class="desc">ransom text renderer</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-05-29T21:00:04Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="posterprintpreparer" data-desc="a web app to create posters" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-05-15T21:25:42Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/PosterPrintPreparer" target="_blank" title="PosterPrintPreparer">PosterPrintPreparer</a>
+      
+    </div>
+    <p class="desc">a web app to create posters</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-05-15T21:25:42Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="gpugateway" data-desc="some functions that provide a quick shortcut to writing gpu code in javascript" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-21T22:35:48Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/gpugateway" target="_blank" title="gpugateway">gpugateway</a>
+      
+    </div>
+    <p class="desc">some functions that provide a quick shortcut to writing gpu code in javascript</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-21T22:35:48Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="html_css_js_gamepad" data-desc="" data-lang="" data-stars="0" data-forks="0" data-updated="2024-04-20T22:38:35Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/html_css_js_gamepad" target="_blank" title="html_css_js_gamepad">html_css_js_gamepad</a>
+      
+    </div>
+    
+    <div class="meta"><span class="updated" title="2024-04-20T22:38:35Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="rust_lessons" data-desc="learingn rust and small snippets and simple examples" data-lang="Rust" data-stars="0" data-forks="0" data-updated="2024-04-14T11:43:23Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/rust_lessons" target="_blank" title="rust_lessons">rust_lessons</a>
+      
+    </div>
+    <p class="desc">learingn rust and small snippets and simple examples</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#dea584"></span>Rust</span><span class="updated" title="2024-04-14T11:43:23Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="stepper_motor_control" data-desc="a js stepper motor control" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-04T15:14:33Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/stepper_motor_control" target="_blank" title="stepper_motor_control">stepper_motor_control</a>
+      
+    </div>
+    <p class="desc">a js stepper motor control</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-04T15:14:33Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="create_update_github_licenses" data-desc="create_update_github_licenses" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T10:50:20Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/create_update_github_licenses" target="_blank" title="create_update_github_licenses">create_update_github_licenses</a>
+      
+    </div>
+    <p class="desc">create_update_github_licenses</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T10:50:20Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="hubbleharvest" data-desc="get a random image of hubble " data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:21Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/hubbleharvest" target="_blank" title="hubbleharvest">hubbleharvest</a>
+      
+    </div>
+    <p class="desc">get a random image of hubble </p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:21Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="hubbleharvest_windowsclient" data-desc="" data-lang="C#" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:20Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/hubbleharvest_windowsclient" target="_blank" title="hubbleharvest_windowsclient">hubbleharvest_windowsclient</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#8b949e"></span>C#</span><span class="updated" title="2024-04-02T09:37:20Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="bfh_java_kotlin" data-desc="" data-lang="" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:19Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/bfh_java_kotlin" target="_blank" title="bfh_java_kotlin">bfh_java_kotlin</a>
+      
+    </div>
+    
+    <div class="meta"><span class="updated" title="2024-04-02T09:37:19Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="networking_stuff" data-desc="" data-lang="HTML" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:20Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/networking_stuff" target="_blank" title="networking_stuff">networking_stuff</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#e34c26"></span>HTML</span><span class="updated" title="2024-04-02T09:37:20Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="ascii" data-desc="ascii table in text form , curl 11235.ch/ascii" data-lang="HTML" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:19Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/ascii" target="_blank" title="ascii">ascii</a>
+      
+    </div>
+    <p class="desc">ascii table in text form , curl 11235.ch/ascii</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#e34c26"></span>HTML</span><span class="updated" title="2024-04-02T09:37:19Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="polynoms_base" data-desc="bin, hex, sexa, decimal... " data-lang="HTML" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:18Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/polynoms_base" target="_blank" title="polynoms_base">polynoms_base</a>
+      
+    </div>
+    <p class="desc">bin, hex, sexa, decimal... </p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#e34c26"></span>HTML</span><span class="updated" title="2024-04-02T09:37:18Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="sound_science" data-desc="all about music theory" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:36:57Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/sound_science" target="_blank" title="sound_science">sound_science</a>
+      
+    </div>
+    <p class="desc">All about Music Theory</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:36:57Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="randomints" data-desc="returns an array of unique random integers" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:36:56Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/randomInts" target="_blank" title="randomInts">randomInts</a>
+      
+    </div>
+    <p class="desc">Returns an array of unique random Integers</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:36:56Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="jsanimation" data-desc="a simple javascript animation" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:36:56Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/jsanimation" target="_blank" title="jsanimation">jsanimation</a>
+      
+    </div>
+    <p class="desc">A simple Javascript Animation</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:36:56Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="urlparts" data-desc="gets you the scheme (http/ftp...) userinfo (user:pass) @ host (domain.com) : port (8080) path (/some/folder/or/file) ? query (asdf=asdf&b=b) # fragment (#anchor_tag)" data-lang="JavaScript" data-stars="2" data-forks="1" data-updated="2024-04-02T09:36:56Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/UrlParts" target="_blank" title="UrlParts">UrlParts</a>
+      
+    </div>
+    <p class="desc">gets you the scheme (http/ftp...) userinfo (user:pass) @ host (domain.com) : port (8080) path (/some/folder/or/file) ? query (asdf=asdf&b=b) # fragment (#anchor_tag)</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="stars">★ 2</span><span>⑂ 1</span><span class="updated" title="2024-04-02T09:36:56Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="uriobject" data-desc="" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:36:55Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/uriobject" target="_blank" title="uriobject">uriobject</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:36:55Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="python_dualsense" data-desc="" data-lang="Python" data-stars="0" data-forks="1" data-updated="2024-04-02T09:36:55Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/python_dualsense" target="_blank" title="python_dualsense">python_dualsense</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#3572A5"></span>Python</span><span>⑂ 1</span><span class="updated" title="2024-04-02T09:36:55Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="gameengine" data-desc="" data-lang="HTML" data-stars="0" data-forks="0" data-updated="2024-04-02T09:36:53Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/gameengine" target="_blank" title="gameengine">gameengine</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#e34c26"></span>HTML</span><span class="updated" title="2024-04-02T09:36:53Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="deutsch" data-desc="" data-lang="HTML" data-stars="0" data-forks="0" data-updated="2024-04-02T09:36:53Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/deutsch" target="_blank" title="deutsch">deutsch</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#e34c26"></span>HTML</span><span class="updated" title="2024-04-02T09:36:53Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="music-lessons" data-desc="" data-lang="HTML" data-stars="0" data-forks="0" data-updated="2024-04-02T09:36:52Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/music-lessons" target="_blank" title="music-lessons">music-lessons</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#e34c26"></span>HTML</span><span class="updated" title="2024-04-02T09:36:52Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="dualsense_chrome" data-desc="please how fcking awesome is the hid api for chrome ! :) " data-lang="HTML" data-stars="2" data-forks="1" data-updated="2024-04-02T08:53:33Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/dualsense_chrome" target="_blank" title="dualsense_chrome">dualsense_chrome</a>
+      
+    </div>
+    <p class="desc">please how fcking awesome is the HID api for chrome ! :) </p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#e34c26"></span>HTML</span><span class="stars">★ 2</span><span>⑂ 1</span><span class="updated" title="2024-04-02T08:53:33Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="usb_hid" data-desc="usb hid messages decoding and encoding" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T10:13:53Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/usb_hid" target="_blank" title="usb_hid">usb_hid</a>
+      
+    </div>
+    <p class="desc">usb hid messages decoding and encoding</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T10:13:53Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="raspi_microscope" data-desc="controlling a microscope with a raspberry pi" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T10:13:47Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/raspi_microscope" target="_blank" title="raspi_microscope">raspi_microscope</a>
+      
+    </div>
+    <p class="desc">controlling a microscope with a raspberry pi</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T10:13:47Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="chat_openai_com_helper_scripts" data-desc="some scripts to automatize input of chat gpt" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T10:13:19Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/chat_openai_com_helper_scripts" target="_blank" title="chat_openai_com_helper_scripts">chat_openai_com_helper_scripts</a>
+      
+    </div>
+    <p class="desc">some scripts to automatize input of chat gpt</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T10:13:19Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="nova_astrometry_net_jsapi" data-desc="a javascript api to easily communicate with nova astronomy net api " data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T10:13:40Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/nova_astrometry_net_jsapi" target="_blank" title="nova_astrometry_net_jsapi">nova_astrometry_net_jsapi</a>
+      
+    </div>
+    <p class="desc">a javascript api to easily communicate with nova astronomy net api </p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T10:13:40Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="artseyio_keyboard_emulator" data-desc="" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T10:13:17Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/artseyio_keyboard_emulator" target="_blank" title="artseyio_keyboard_emulator">artseyio_keyboard_emulator</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T10:13:17Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="youtubelooper" data-desc="" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T10:13:55Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/youtubelooper" target="_blank" title="youtubelooper">youtubelooper</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T10:13:55Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="minimalmessenger" data-desc="a minimal messanger with client js ws and denojs" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T10:13:38Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/minimalmessenger" target="_blank" title="minimalmessenger">minimalmessenger</a>
+      
+    </div>
+    <p class="desc">a minimal messanger with client js ws and denojs</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T10:13:38Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="code_autoextender" data-desc="this is a small script that automatically extends a source code and acts in a way like a preprocessor" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:38Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/code_autoextender" target="_blank" title="code_autoextender">code_autoextender</a>
+      
+    </div>
+    <p class="desc">this is a small script that automatically extends a source code and acts in a way like a preprocessor</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:38Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="imageintervals" data-desc="a web app to create a slideshow /diashow /gallery of images" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T10:13:33Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/imageintervals" target="_blank" title="imageintervals">imageintervals</a>
+      
+    </div>
+    <p class="desc">a web app to create a slideshow /diashow /gallery of images</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T10:13:33Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="gpugateway_deno_dev" data-desc="a tool like shadertoy just with webgpu and more cpu <-> gpu control" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T10:13:31Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/gpugateway_deno_dev" target="_blank" title="gpugateway_deno_dev">gpugateway_deno_dev</a>
+      
+    </div>
+    <p class="desc">a tool like shadertoy just with webgpu and more CPU &lt;-&gt; GPU control</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T10:13:31Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="mousers_proxy" data-desc="yet another 'proxy' library to controll the mouse with javascritp, this time it is https://github.com/altf02/mouse-rs" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T10:13:39Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/mousers_proxy" target="_blank" title="mousers_proxy">mousers_proxy</a>
+      
+    </div>
+    <p class="desc">yet another 'proxy' library to controll the mouse with javascritp, this time it is https://github.com/AltF02/mouse-rs</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T10:13:39Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="launchpad_mouse_clicker" data-desc="a small app to use the launchpad as a mouse clicker which is then used to controll the https://www.polychromedsp.com/" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:36:06Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/launchpad_mouse_clicker" target="_blank" title="launchpad_mouse_clicker">launchpad_mouse_clicker</a>
+      
+    </div>
+    <p class="desc">a small app to use the launchpad as a mouse clicker which is then used to controll the https://www.polychromedsp.com/</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:36:06Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="node_command" data-desc="this denojs module spawns a child process. it effectively writes the specified node.js function directly to the standard input (stdin) of this process. this unique approach, while introducing some overhead, maintains practical usability for a variety of applications, particularly those where ultra-high speed is not a critical factor." data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:35Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/node_command" target="_blank" title="node_command">node_command</a>
+      
+    </div>
+    <p class="desc">This denojs module spawns a child process. It effectively writes the specified Node.js function directly to the standard input (stdin) of this process. This unique approach, while introducing some overhead, maintains practical usability for a variety of applications, particularly those where ultra-high speed is not a critical factor.</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:35Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="linklist" data-desc="a list of projects" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:36Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/linklist" target="_blank" title="linklist">linklist</a>
+      
+    </div>
+    <p class="desc">a list of projects</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:36Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="deno_rust_midi" data-desc="control midi devices with deno and rust" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:37Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/deno_rust_midi" target="_blank" title="deno_rust_midi">deno_rust_midi</a>
+      
+    </div>
+    <p class="desc">control midi devices with deno and rust</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:37Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="statistics" data-desc="statistics for typed arrays, very fast thanks to rust and webassembly" data-lang="Rust" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:37Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/statistics" target="_blank" title="statistics">statistics</a>
+      
+    </div>
+    <p class="desc">statistics for typed arrays, very fast thanks to rust and webassembly</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#dea584"></span>Rust</span><span class="updated" title="2024-04-02T09:37:37Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="label_layouter" data-desc="a small app to layout labels " data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:40Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/label_layouter" target="_blank" title="label_layouter">label_layouter</a>
+      
+    </div>
+    <p class="desc">a small app to layout labels </p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:40Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="denojs_f_generate_markdown" data-desc="convert javascript files (comments with markdown tags) into markdown" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T10:13:23Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/denojs_f_generate_markdown" target="_blank" title="denojs_f_generate_markdown">denojs_f_generate_markdown</a>
+      
+    </div>
+    <p class="desc">convert javascript files (comments with markdown tags) into markdown</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T10:13:23Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="vector" data-desc="vectors in javascript" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T10:13:53Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/vector" target="_blank" title="vector">vector</a>
+      
+    </div>
+    <p class="desc">vectors in javascript</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T10:13:53Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="fitsfiddler" data-desc="a tool for inspecting and autostretching fits images in the browser" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:39Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/fitsfiddler" target="_blank" title="fitsfiddler">fitsfiddler</a>
+      
+    </div>
+    <p class="desc">A tool for inspecting and autostretching fits images in the browser</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:39Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="o_file__fits" data-desc="parse fit / fts / fits files in javascript, autostretch is also implemented ;)" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:39Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/o_file__fits" target="_blank" title="o_file__fits">o_file__fits</a>
+      
+    </div>
+    <p class="desc">parse fit / fts / fits files in javascript, autostretch is also implemented ;)</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:39Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="o_wav_file" data-desc="reading and writing .wav files with denojs" data-lang="" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:41Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/O_wav_file" target="_blank" title="O_wav_file">O_wav_file</a>
+      
+    </div>
+    <p class="desc">reading and writing .wav files with denojs</p>
+    <div class="meta"><span class="updated" title="2024-04-02T09:37:41Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="o_file__wav" data-desc="a wav file in javascript, provides also functions to generate images" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:41Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/o_file__wav" target="_blank" title="o_file__wav">o_file__wav</a>
+      
+    </div>
+    <p class="desc">a wav file in javascript, provides also functions to generate images</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:41Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="qoi_file" data-desc="de- and en- coder for qoi quite ok image in javascript" data-lang="" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:42Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/qoi_file" target="_blank" title="qoi_file">qoi_file</a>
+      
+    </div>
+    <p class="desc">de- and en- coder for qoi quite ok image in javascript</p>
+    <div class="meta"><span class="updated" title="2024-04-02T09:37:42Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="neverstopping_notifications" data-desc="a short little tool that throws notifications and never stops, repeats them forever" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T10:13:40Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/neverstopping_notifications" target="_blank" title="neverstopping_notifications">neverstopping_notifications</a>
+      
+    </div>
+    <p class="desc">a short little tool that throws notifications and never stops, repeats them forever</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T10:13:40Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="core_cutter" data-desc="" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T10:13:20Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/core_cutter" target="_blank" title="core_cutter">core_cutter</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T10:13:20Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="motorized_microscope" data-desc="" data-lang="" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:43Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/motorized_microscope" target="_blank" title="motorized_microscope">motorized_microscope</a>
+      
+    </div>
+    
+    <div class="meta"><span class="updated" title="2024-04-02T09:37:43Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="web_datepicker" data-desc="a small datepicker for a webapplication, gui framework independent" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:41Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/web_datepicker" target="_blank" title="web_datepicker">web_datepicker</a>
+      
+    </div>
+    <p class="desc">a small datepicker for a webapplication, gui framework independent</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:41Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="denojs_f_s_html_syntax_highlighted" data-desc="syntax highlighting " data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:45Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/denojs_f_s_html_syntax_highlighted" target="_blank" title="denojs_f_s_html_syntax_highlighted">denojs_f_s_html_syntax_highlighted</a>
+      
+    </div>
+    <p class="desc">syntax highlighting </p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:45Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="side_slider" data-desc="a little app to compare two images with a slider" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:45Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/side_slider" target="_blank" title="side_slider">side_slider</a>
+      
+    </div>
+    <p class="desc">a little app to compare two images with a slider</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:45Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="browser_notifier" data-desc="" data-lang="HTML" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:42Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/browser_notifier" target="_blank" title="browser_notifier">browser_notifier</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#e34c26"></span>HTML</span><span class="updated" title="2024-04-02T09:37:42Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="denojs_math_constants" data-desc="a repository with various math constants, i created it mainly for the tau constant" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:47Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/denojs_math_constants" target="_blank" title="denojs_math_constants">denojs_math_constants</a>
+      
+    </div>
+    <p class="desc">a repository with various math constants, i created it mainly for the TAU constant</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:47Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="denojs_o_number_normalized" data-desc="an object that automatically calculates a normalized number (between 0.0-1.0) and applies the changes to multiple 'formated'  numbers such as degrees, hours, etc." data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:46Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/denojs_O_number_normalized" target="_blank" title="denojs_O_number_normalized">denojs_O_number_normalized</a>
+      
+    </div>
+    <p class="desc">an object that automatically calculates a normalized number (between 0.0-1.0) and applies the changes to multiple 'formated'  numbers such as degrees, hours, etc.</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:46Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="denojs_terminal_prompt_functions" data-desc="" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T10:13:25Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/denojs_terminal_prompt_functions" target="_blank" title="denojs_terminal_prompt_functions">denojs_terminal_prompt_functions</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T10:13:25Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="hextovec3" data-desc="" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:48Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/hextovec3" target="_blank" title="hextovec3">hextovec3</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:48Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="js_minimal_gui" data-desc="" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:48Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/js_minimal_gui" target="_blank" title="js_minimal_gui">js_minimal_gui</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:48Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="deno_stable_diffusion_autogenerate_stuff" data-desc="" data-lang="Jupyter Notebook" data-stars="1" data-forks="1" data-updated="2022-10-10T22:21:11Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/deno_stable_diffusion_autogenerate_stuff" target="_blank" title="deno_stable_diffusion_autogenerate_stuff">deno_stable_diffusion_autogenerate_stuff</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#DA5B0B"></span>Jupyter Notebook</span><span class="stars">★ 1</span><span>⑂ 1</span><span class="updated" title="2022-10-10T22:21:11Z">Updated 3y ago</span></div>
+  </div><div class="card" data-name="phonetic" data-desc="phonetic" data-lang="" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:22Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/phonetic" target="_blank" title="phonetic">phonetic</a>
+      
+    </div>
+    <p class="desc">phonetic</p>
+    <div class="meta"><span class="updated" title="2024-04-02T09:37:22Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="rust_code" data-desc="" data-lang="Rust" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:26Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/rust_code" target="_blank" title="rust_code">rust_code</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#dea584"></span>Rust</span><span class="updated" title="2024-04-02T09:37:26Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="denojs_f_o__casted_to_class" data-desc="a small library to cast nested multidimensional objects to classes" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:22Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/denojs_f_o__casted_to_class" target="_blank" title="denojs_f_o__casted_to_class">denojs_f_o__casted_to_class</a>
+      
+    </div>
+    <p class="desc">a small library to cast nested multidimensional objects to classes</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:22Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="custom_machine_code" data-desc="following this tutorial https://www.youtube.com/watch?v=5imtvoyvh2w&t=19s" data-lang="" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:23Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/custom_machine_code" target="_blank" title="custom_machine_code">custom_machine_code</a>
+      
+    </div>
+    <p class="desc">following this tutorial https://www.youtube.com/watch?v=5ImTvOyvH2w&t=19s</p>
+    <div class="meta"><span class="updated" title="2024-04-02T09:37:23Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="ti_nspire_python_stuff" data-desc="" data-lang="Python" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:24Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/ti_nspire_python_stuff" target="_blank" title="ti_nspire_python_stuff">ti_nspire_python_stuff</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#3572A5"></span>Python</span><span class="updated" title="2024-04-02T09:37:24Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="denojs_o_command" data-desc="a lib to execute commands with denojs" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:40Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/denojs_O_command" target="_blank" title="denojs_O_command">denojs_O_command</a>
+      
+    </div>
+    <p class="desc">a lib to execute commands with denojs</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:40Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="vuejs_template" data-desc="" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:25Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/vuejs_template" target="_blank" title="vuejs_template">vuejs_template</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:25Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="denojs_crudcracker" data-desc="lightweight crud" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:48Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/denojs_crudcracker" target="_blank" title="denojs_crudcracker">denojs_crudcracker</a>
+      
+    </div>
+    <p class="desc">lightweight crud</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:48Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="c_sharp_dotnet_linux_messenger_app" data-desc="a small instant messenger to get used to dotnet development on linux" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:27Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/c_sharp_dotnet_linux_messenger_app" target="_blank" title="c_sharp_dotnet_linux_messenger_app">c_sharp_dotnet_linux_messenger_app</a>
+      
+    </div>
+    <p class="desc">a small instant messenger to get used to dotnet development on linux</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:27Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="let_me_van_de_paar_that_for_you" data-desc="" data-lang="HTML" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:28Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/let_me_van_de_paar_that_for_you" target="_blank" title="let_me_van_de_paar_that_for_you">let_me_van_de_paar_that_for_you</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#e34c26"></span>HTML</span><span class="updated" title="2024-04-02T09:37:28Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="rust_dualsense" data-desc="reading usb from dualsense with rust" data-lang="Rust" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:28Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/rust_dualsense" target="_blank" title="rust_dualsense">rust_dualsense</a>
+      
+    </div>
+    <p class="desc">reading usb from dualsense with rust</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#dea584"></span>Rust</span><span class="updated" title="2024-04-02T09:37:28Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="strapi_auto_generate_models" data-desc="" data-lang="JavaScript" data-stars="1" data-forks="0" data-updated="2024-04-02T09:37:27Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/strapi_auto_generate_models" target="_blank" title="strapi_auto_generate_models">strapi_auto_generate_models</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="stars">★ 1</span><span class="updated" title="2024-04-02T09:37:27Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="o_json_to_css" data-desc="" data-lang="HTML" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:30Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/O_json_to_css" target="_blank" title="O_json_to_css">O_json_to_css</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#e34c26"></span>HTML</span><span class="updated" title="2024-04-02T09:37:30Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="deno_module_playground" data-desc="a playground" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:32Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/deno_module_playground" target="_blank" title="deno_module_playground">deno_module_playground</a>
+      
+    </div>
+    <p class="desc">a playground</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:32Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="o_webserver" data-desc="a lightweight simple webserver made with deno js " data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:36Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/O_webserver" target="_blank" title="O_webserver">O_webserver</a>
+      
+    </div>
+    <p class="desc">a lightweight simple webserver made with deno js </p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:36Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="deno_o_path" data-desc="move of o_path_file to o_folder_file" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:32Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/deno_o_path" target="_blank" title="deno_o_path">deno_o_path</a>
+      
+    </div>
+    <p class="desc">move of o_path_file to o_folder_file</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:32Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="javascript_basics" data-desc="" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:47Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/javascript_basics" target="_blank" title="javascript_basics">javascript_basics</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:47Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="denojs_jsondb" data-desc="a simple .json filebased database for denojs" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:36:58Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/denojs_jsondb" target="_blank" title="denojs_jsondb">denojs_jsondb</a>
+      
+    </div>
+    <p class="desc">a simple .json filebased database for denojs</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:36:58Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="denojs_o_json_db" data-desc="a small lightweight json ascii file based  database" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:31Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/denojs_O_json_db" target="_blank" title="denojs_O_json_db">denojs_O_json_db</a>
+      
+    </div>
+    <p class="desc">a small lightweight json ascii file based  database</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:31Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="o_path_file" data-desc="" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:34Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/O_path_file" target="_blank" title="O_path_file">O_path_file</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:34Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="o_url" data-desc="" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:44Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/O_url" target="_blank" title="O_url">O_url</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:44Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="o_binary_string" data-desc="get a binary string from text and font family" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:36:59Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/O_binary_string" target="_blank" title="O_binary_string">O_binary_string</a>
+      
+    </div>
+    <p class="desc">get a binary string from text and font family</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:36:59Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="ledlightlayouter" data-desc="a small app to create layouts of led lights" data-lang="HTML" data-stars="0" data-forks="0" data-updated="2024-04-02T09:36:58Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/ledlightlayouter" target="_blank" title="ledlightlayouter">ledlightlayouter</a>
+      
+    </div>
+    <p class="desc">a small app to create layouts of led lights</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#e34c26"></span>HTML</span><span class="updated" title="2024-04-02T09:36:58Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="f_evaluate_object" data-desc="rename f_o_evaluated to f_evaluate_object" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:36:59Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/f_evaluate_object" target="_blank" title="f_evaluate_object">f_evaluate_object</a>
+      
+    </div>
+    <p class="desc">rename f_o_evaluated to f_evaluate_object</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:36:59Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="instant_messenger" data-desc="a super lightweight instant messenger using vuejs, deno, strapi " data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:00Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/instant_messenger" target="_blank" title="instant_messenger">instant_messenger</a>
+      
+    </div>
+    <p class="desc">a super lightweight instant messenger using vuejs, deno, strapi </p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:00Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="cameracontrol" data-desc="a gui application for controlling a camera via usb using gphoto2" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:36:57Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/cameracontrol" target="_blank" title="cameracontrol">cameracontrol</a>
+      
+    </div>
+    <p class="desc">a gui application for controlling a camera via usb using gphoto2</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:36:57Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="denojs_code" data-desc="denojs lessons" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:25Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/denojs_code" target="_blank" title="denojs_code">denojs_code</a>
+      
+    </div>
+    <p class="desc">denojs lessons</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:25Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="js_code" data-desc="javascript code" data-lang="" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:12Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/js_code" target="_blank" title="js_code">js_code</a>
+      
+    </div>
+    <p class="desc">javascript code</p>
+    <div class="meta"><span class="updated" title="2024-04-02T09:37:12Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="kotlin_intellij_stuff" data-desc="" data-lang="Kotlin" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:12Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/kotlin_intellij_stuff" target="_blank" title="kotlin_intellij_stuff">kotlin_intellij_stuff</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#8b949e"></span>Kotlin</span><span class="updated" title="2024-04-02T09:37:12Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="go_code" data-desc="go code" data-lang="" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:13Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/go_code" target="_blank" title="go_code">go_code</a>
+      
+    </div>
+    <p class="desc">go code</p>
+    <div class="meta"><span class="updated" title="2024-04-02T09:37:13Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="rust_code_old" data-desc="" data-lang="Rust" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:14Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/rust_code_old" target="_blank" title="rust_code_old">rust_code_old</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#dea584"></span>Rust</span><span class="updated" title="2024-04-02T09:37:14Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="pyqt5-reactive-gui" data-desc="pyqt5 reactive gui code" data-lang="Python" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:15Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/pyqt5-reactive-gui" target="_blank" title="pyqt5-reactive-gui">pyqt5-reactive-gui</a>
+      
+    </div>
+    <p class="desc">PyQt5 reactive GUI code</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#3572A5"></span>Python</span><span class="updated" title="2024-04-02T09:37:15Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="arduino" data-desc="" data-lang="HTML" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:44Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/arduino" target="_blank" title="arduino">arduino</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#e34c26"></span>HTML</span><span class="updated" title="2024-04-02T09:37:44Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="betriebspraktikum_2022" data-desc="" data-lang="Python" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:16Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/betriebspraktikum_2022" target="_blank" title="betriebspraktikum_2022">betriebspraktikum_2022</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#3572A5"></span>Python</span><span class="updated" title="2024-04-02T09:37:16Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="arduinotutorials" data-desc="basic arduino tutorials for beginners" data-lang="" data-stars="0" data-forks="0" data-updated="2020-10-07T17:17:06Z" data-fork="true">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/ArduinoTutorials" target="_blank" title="ArduinoTutorials">ArduinoTutorials</a>
+      <span class="fork-badge">fork</span>
+    </div>
+    <p class="desc">Basic Arduino tutorials for beginners</p>
+    <div class="meta"><span class="updated" title="2020-10-07T17:17:06Z">Updated 5y ago</span></div>
+  </div><div class="card" data-name="npm_js_modules" data-desc="all modules, all es6, all lightweight" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:15Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/npm_js_modules" target="_blank" title="npm_js_modules">npm_js_modules</a>
+      
+    </div>
+    <p class="desc">All modules, all es6, all lightweight</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:15Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="marinas_kunst_gallerie" data-desc="" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:16Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/marinas_kunst_gallerie" target="_blank" title="marinas_kunst_gallerie">marinas_kunst_gallerie</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:16Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="threejs_projects" data-desc="" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2022-03-27T01:01:03Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/threejs_projects" target="_blank" title="threejs_projects">threejs_projects</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2022-03-27T01:01:03Z">Updated 4y ago</span></div>
+  </div><div class="card" data-name="sqlite_tutorial" data-desc="how to use sqlite " data-lang="HTML" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:14Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/sqlite_tutorial" target="_blank" title="sqlite_tutorial">sqlite_tutorial</a>
+      
+    </div>
+    <p class="desc">how to use sqlite </p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#e34c26"></span>HTML</span><span class="updated" title="2024-04-02T09:37:14Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="coding_tutorials" data-desc="knowledge for all, bitch!" data-lang="HTML" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:17Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/coding_tutorials" target="_blank" title="coding_tutorials">coding_tutorials</a>
+      
+    </div>
+    <p class="desc">knowledge for all, bitch!</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#e34c26"></span>HTML</span><span class="updated" title="2024-04-02T09:37:17Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="web_stuff" data-desc="" data-lang="HTML" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:17Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/web_stuff" target="_blank" title="web_stuff">web_stuff</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#e34c26"></span>HTML</span><span class="updated" title="2024-04-02T09:37:17Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="kotlin_code" data-desc="learning kotlin" data-lang="Kotlin" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:13Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/kotlin_code" target="_blank" title="kotlin_code">kotlin_code</a>
+      
+    </div>
+    <p class="desc">learning kotlin</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#8b949e"></span>Kotlin</span><span class="updated" title="2024-04-02T09:37:13Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="hubbleharvest_electron_consumer" data-desc="" data-lang="JavaScript" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:23Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/hubbleharvest_electron_consumer" target="_blank" title="hubbleharvest_electron_consumer">hubbleharvest_electron_consumer</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span class="updated" title="2024-04-02T09:37:23Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="c_code" data-desc="c code " data-lang="C" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:24Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/c_code" target="_blank" title="c_code">c_code</a>
+      
+    </div>
+    <p class="desc">c code </p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#555555"></span>C</span><span class="updated" title="2024-04-02T09:37:24Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="assembler_projects" data-desc="" data-lang="Assembly" data-stars="0" data-forks="0" data-updated="2024-04-02T09:37:29Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/assembler_projects" target="_blank" title="assembler_projects">assembler_projects</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#8b949e"></span>Assembly</span><span class="updated" title="2024-04-02T09:37:29Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="python_code" data-desc="" data-lang="Python" data-stars="0" data-forks="1" data-updated="2024-04-02T09:37:26Z" data-fork="false">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/python_code" target="_blank" title="python_code">python_code</a>
+      
+    </div>
+    
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#3572A5"></span>Python</span><span>⑂ 1</span><span class="updated" title="2024-04-02T09:37:26Z">Updated 2y ago</span></div>
+  </div><div class="card" data-name="dualsense" data-desc="information about sony's dualsense gamepad" data-lang="" data-stars="0" data-forks="0" data-updated="2020-12-08T00:33:17Z" data-fork="true">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/dualsense" target="_blank" title="dualsense">dualsense</a>
+      <span class="fork-badge">fork</span>
+    </div>
+    <p class="desc">Information about Sony's DualSense gamepad</p>
+    <div class="meta"><span class="updated" title="2020-12-08T00:33:17Z">Updated 5y ago</span></div>
+  </div><div class="card" data-name="dualsensesupport" data-desc="preliminar dualsense" data-lang="" data-stars="0" data-forks="0" data-updated="2021-01-26T23:33:38Z" data-fork="true">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/DualSenseSupport" target="_blank" title="DualSenseSupport">DualSenseSupport</a>
+      <span class="fork-badge">fork</span>
+    </div>
+    <p class="desc">Preliminar DualSense</p>
+    <div class="meta"><span class="updated" title="2021-01-26T23:33:38Z">Updated 5y ago</span></div>
+  </div><div class="card" data-name="pydualsense" data-desc="control your dualsense controller with python" data-lang="Python" data-stars="0" data-forks="0" data-updated="2021-02-28T21:38:40Z" data-fork="true">
+    <div class="card-title">
+      <a href="https://github.com/jonasfrey/pydualsense" target="_blank" title="pydualsense">pydualsense</a>
+      <span class="fork-badge">fork</span>
+    </div>
+    <p class="desc">control your dualsense controller with python</p>
+    <div class="meta"><span class="lang"><span class="lang-dot" style="background:#3572A5"></span>Python</span><span class="updated" title="2021-02-28T21:38:40Z">Updated 5y ago</span></div>
+  </div></div>
+  <div class="no-results" id="no-results">No repositories match your search.</div>
+</main>
+<script>
+function filterRepos(){
+  const q=document.getElementById('search').value.toLowerCase();
+  const sort=document.getElementById('sort').value;
+  const lang=document.getElementById('lang-filter').value;
+  const type=document.getElementById('type-filter').value;
+  const grid=document.getElementById('grid');
+  let cards=[...grid.querySelectorAll('.card')];
+  let count=0;
+  cards.forEach(c=>{
+    const show=(c.dataset.name.includes(q)||c.dataset.desc.includes(q))&&(!lang||c.dataset.lang===lang)&&(!type||(type==='fork'?c.dataset.fork==='true':c.dataset.fork==='false'));
+    c.style.display=show?'':'none';
+    if(show)count++;
+  });
+  cards.filter(c=>c.style.display!=='none').sort((a,b)=>{
+    if(sort==='stars')return parseInt(b.dataset.stars)-parseInt(a.dataset.stars);
+    if(sort==='forks')return parseInt(b.dataset.forks)-parseInt(a.dataset.forks);
+    if(sort==='name')return a.dataset.name.localeCompare(b.dataset.name);
+    return new Date(b.dataset.updated)-new Date(a.dataset.updated);
+  }).forEach(c=>grid.appendChild(c));
+  document.getElementById('shown-count').textContent=count+' repos';
+  document.getElementById('no-results').style.display=count===0?'block':'none';
+}
+</script>
+</body>
+</html>
