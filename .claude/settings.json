@@ -5,7 +5,16 @@
       "Bash(google-chrome --headless --disable-gpu --no-sandbox --screenshot=page.png --window-size=794,1123 whoch2_bewerbung.html)",
       "Bash(pdfinfo whoch2_bewerbung.pdf)",
       "Bash(rm -f pg-*.png; google-chrome --headless --disable-gpu --no-pdf-header-footer --print-to-pdf=whoch2_bewerbung.pdf --no-sandbox whoch2_bewerbung.html 2>/dev/null; pdfinfo whoch2_bewerbung.pdf | grep Pages)",
-      "Bash(pdftoppm -png -r 90 -singlefile whoch2_bewerbung.pdf final)"
+      "Bash(pdftoppm -png -r 90 -singlefile whoch2_bewerbung.pdf final)",
+      "Bash(pdfinfo zeugnisse_ausweise_etc/beilagen.pdf)",
+      "Bash(python3 -c \"import markdown; print\\('markdown ok'\\)\")",
+      "Bash(git mv *)",
+      "Bash(chmod +x build.sh)",
+      "Bash(./build.sh)",
+      "Bash(pdfinfo whoch2_anschreiben.pdf)",
+      "Bash(pdfinfo whoch2_cv.pdf)",
+      "Bash(pdftoppm -png -r 90 -f 1 -l 1 whoch2_anschreiben.pdf /tmp/claude-1000/-home-legion5pro-code-jonasfrey-dev/36c83229-f9ee-492d-83c8-4477c6297cf2/scratchpad/an)",
+      "Bash(pdftoppm -png -r 90 whoch2_cv.pdf /tmp/claude-1000/-home-legion5pro-code-jonasfrey-dev/36c83229-f9ee-492d-83c8-4477c6297cf2/scratchpad/cv)"
     ],
     "additionalDirectories": [
       "/home/legion5pro/code/jonasfrey.dev/bewerbungen"

@@ -26,7 +26,8 @@ Warum ich gut zu Ihrer Ausschreibung passe:
 - **Docker & DevOps:** Praktische Erfahrung mit containerisierten Anwendungen, Git, CI/CD, Deployment und Monitoring (u. a. eigenes GPU-Monitoring-Tool *nvidia_smi_gui*).
 - **Prompt Engineering & KI:** In Projekten wie *video_wizard* (KI-gestützter Video-Editor: Video → Audio → Text → Schnitt) integriere ich LLM- und Inferenz-Tools produktiv – Prompt-Engineering gehört zu meinem Alltag.
 - **Moderne Frontends:** Fundierte JavaScript-Erfahrung; komponentenbasierte Frameworks wie Vue.js eigne ich mir schnell und gerne an.
-- **Standort & Sprachen:** In Bern verwurzelt (Informatiker EFZ, aktuell HF Informatik an der GIBB), Deutsch als Muttersprache, fliessendes Englisch.
+- **Ausbildung:** Informatiker EFZ; aktuell schliesse ich im **Winter 2026 die Ausbildung zum dipl. Techniker HF Informatik, Fachrichtung Applikationsentwicklung** (GIBB Bern), ab.
+- **Standort & Sprachen:** In Bern verwurzelt, Deutsch als Muttersprache, fliessendes Englisch.
 
 Ich behalte gerne das grosse Ganze im Blick, ohne die Details aus den Augen zu verlieren, löse komplexe Probleme mit Ausdauer und bringe mich aktiv in technische Diskussionen ein. Neben meiner Arbeit pflege ich über diverse Open-Source-Repositories – das Bauen sauberer, skalierbarer Software ist für mich nicht nur Beruf, sondern Leidenschaft.
 
